@@ -1,3 +1,5 @@
+'use strict'
+
 var pais = "España";
 var continente = "Europa";
 var antiguedad = 722;
