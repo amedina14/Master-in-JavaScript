@@ -21,3 +21,7 @@ console.log(Number(numero_falso)+7);
 console.log(parseFloat(numero_falso)+7.5);
 console.log(String(numero_falso)+7);
 
+console.log(typeof numero_entero);
+console.log(typeof cadena_texto);
+console.log(typeof true_false);
+console.log(typeof numero_falso);
