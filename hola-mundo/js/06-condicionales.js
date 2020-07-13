@@ -31,5 +31,24 @@ if (edad >= 18) {
     }
 
 } else {
+    // Es menor de edad
     console.log("Es menor de edad.")
+}
+
+var year = 2020;
+
+if(year != 2016){
+    console.log("Year is not 2016. Actually: "+year);
+}
+
+if(year >= 2000 && year <= 2020 && year != 2018){
+    console.log("Estamos en la era actual");
+} else {
+    console.log("Estamos en la era postmoderna");
+}
+
+if(year == 2008 || (year >= 2018 && year == 2028)){
+    console.log("Year ends in 8");
+}else{
+    console.log("Year doesn't registered")
 }
