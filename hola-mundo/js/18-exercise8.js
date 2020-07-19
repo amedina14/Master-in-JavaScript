@@ -14,7 +14,7 @@ var resultado = 0;
 var numero1 = parseInt(prompt("Insert number one: ", 0));
 var numero2 = parseInt(prompt("Insert number two: ", 0));
 
-while (isNaN(numero1) || isNaN(numero2)) {
+while (numero1 < 0 || numero2 < 0 || isNaN(numero1) || isNaN(numero2)) {
     alert("incorrect numbers")
     var numero1 = parseInt(prompt("Insert number one: ", 0));
     var numero2 = parseInt(prompt("Insert number two: ", 0));
