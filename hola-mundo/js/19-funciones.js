@@ -9,7 +9,8 @@
 function calculadora() {
     // Conjunto de instrucciones a ejecutar
     console.log("Hola soy la calculadora!!");    
-    console.log("Si soy yo");    
+    console.log("Si soy yo");
+    return "retornooo";
 }
 
 // Invocar o llamar la funcion
