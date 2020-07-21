@@ -5,7 +5,7 @@
 var nombre = "Adrian";
 var nombres = ["Riko", "Honey", "Miel", "Qiubyk", "Varey", 52, true];
 
-var languages = new Array("PHP", "JS", "Go", "Java","C","C#","Python");
+var languages = new Array("PHP", "JS", "Go", "Java", "C", "C#", "Python");
 
 console.log("nombre 1:", nombres[1]);
 console.log("chars nombre 1:", nombres[1].length);
@@ -24,7 +24,20 @@ if (elemento >= nombres.length){
 
 document.write("<h1>Lenguajes de programacion del 2018: </h1>");
 document.write("<ul>");
+
+/* 
+// Forma clasica de recorrer un array
+
 for (var i = 0; i < languages.length; i++) {
-    document.write("<li> "+languages[i]+"</li>");
+    document.write("<li> " + languages[i] + "</li>");
 }
+*/
+
+// Forma elegante de recorrer: forEach()
+
+languages.forEach((elemento, index, data)=>{
+    console.log(data);
+    document.write("<li> "+ index + " - " + elemento + "</li>");
+});
+
 document.write("</ul>");
