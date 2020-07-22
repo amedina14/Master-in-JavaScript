@@ -42,8 +42,13 @@ if(indice > -1){
     peliculas.splice(indice,1);
 }
 
-// Convertir a un string
+// Convertir array a un string
 var peliculas_string = peliculas.join(", ");
+
+// Convertir Cadena String a un Array
+var cadena = "texto1, texto2, texto3";
+var cadena_array = cadena.split(", ");
 
 console.log(peliculas);
 console.log(peliculas_string);
+console.log(cadena_array);
