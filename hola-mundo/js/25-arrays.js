@@ -52,7 +52,7 @@ for(let language in languages){
 
 document.write("</ul>");
 
-// Busquedas en un Array
+// Busquedas en un Array: Some, find, findIndex
 var precios = [10, 20, 50, 80, 12];
 
 var precios_caros = precios.some(precio => precio > 80);
