@@ -23,7 +23,7 @@ if (elemento >= nombres.length){
 */
 
 document.write("<h1>Lenguajes de programacion del 2018: </h1>");
-document.write("<ul>");
+document.write("<ul style='margin:10px'>");
 
 /* 
 // Forma clasica de recorrer un array
@@ -37,7 +37,17 @@ for (var i = 0; i < languages.length; i++) {
 
 languages.forEach((elemento, index, data)=>{
     console.log(data);
-    document.write("<li> "+ index + " - " + elemento + "</li>");
+    document.write("<li> "+ index 
+    + " - " + elemento + "</li>");
 });
+
+document.write("<br>");    
+
+// FOR IN
+
+for(let language in languages){
+    document.write("<li style='padding:5px'> "
+    + languages[language] + "</li>");    
+}
 
 document.write("</ul>");
