@@ -49,6 +49,16 @@ var peliculas_string = peliculas.join(", ");
 var cadena = "texto1, texto2, texto3";
 var cadena_array = cadena.split(", ");
 
-console.log(peliculas);
-console.log(peliculas_string);
-console.log(cadena_array);
+console.log("peliculas originales: ",peliculas);
+console.log("peliculas_string:",peliculas_string);
+console.log("cadena array:",cadena_array);
+
+// Ordenar un Array: de la A a Z
+peliculas.sort();
+document.write("<h3 style='padding:10px;'>peliculas sort: </h3>",peliculas+"<br>");
+console.log("peliculas sort:",peliculas);
+
+// Orden de la Z a la A
+peliculas.reverse();
+document.write("<h3 style='padding:10px;'>peliculas reverse: </h3>",peliculas+"<br>");
+console.log("peliculas reverse:",peliculas);
