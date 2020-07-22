@@ -51,3 +51,14 @@ for(let language in languages){
 }
 
 document.write("</ul>");
+
+// Busquedas en un Array
+var precios = [10, 20, 50, 80, 12];
+
+var precios_caros = precios.some(precio => precio > 80);
+console.log("Hay precios mayor a 80?",precios_caros);
+
+var index_php = languages.findIndex(language => language.toLowerCase() == "php");
+var exist_php = languages.find(language => language.toLowerCase() == "php");
+console.log("Give me php Index:",index_php);
+console.log("Give me php element:",exist_php);
