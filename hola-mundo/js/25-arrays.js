@@ -33,7 +33,7 @@ for (var i = 0; i < languages.length; i++) {
 }
 */
 
-// Forma elegante de recorrer: forEach()
+// Forma elegante de recorrer: forEach() - recorre
 
 languages.forEach((elemento, index, data)=>{
     console.log(data);
@@ -43,7 +43,7 @@ languages.forEach((elemento, index, data)=>{
 
 document.write("<br>");    
 
-// FOR IN
+// FOR IN: recorre
 
 for(let language in languages){
     document.write("<li style='padding:5px'> "
