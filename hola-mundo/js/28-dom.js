@@ -110,3 +110,19 @@ console.log(claseRojo);
 // Mas de un tag - No recomendado porque selecciona solo 1
 var tags = document.querySelector("div");
 console.log(tags);
+
+/**
+ * Este ejemplo devuelve una lista de todos los elementos <div> del documento con una clase "nota" o "alerta"
+ * 
+ * var matches = document.querySelectorAll('div.nota, div.alerta');
+ * 
+ * 
+ * Aquí, se obtiene una lista de elementos <p> cuyo
+ * elemento padre inmediato es un div con la clase 
+ * "highlighted" y que está ubicado dentro de un 
+ * contenedor cuyo ID es "test".
+ * 
+ * var container = document.querySelector('#test');
+ * var matches = container.querySelectorAll('div.highlighted > p');
+ * 
+ */
