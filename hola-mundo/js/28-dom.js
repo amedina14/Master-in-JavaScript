@@ -31,7 +31,12 @@ caja2.textAlign = "center";
 caja2.style.margin = "10px";
 caja2.style.padding = "10px";
 
-// Get element by tags
+
+
+/**
+ * Get element by TAGS HTML
+ */
+
 var todosLosDivs = document.getElementsByTagName('div');
 var contenidoEnTexto = todosLosDivs[2].textContent;
 console.log(contenidoEnTexto);
@@ -43,9 +48,12 @@ var seccion = document.querySelector("#miseccion");
 var hr = document.createElement("hr");
 
 //todosLosDivs.forEach((valor, indice)=>{
+//});
+
 for (var valor in todosLosDivs) {
     //console.log(todosLosDivs[valor]);
-    if (typeof todosLosDivs[valor].textContent == 'string' ) {
+    // Solo los divs que son string
+    if (typeof todosLosDivs[valor].textContent == 'string') {
         //crea elemento html <p>
         var parrafo = document.createElement("p");
         //agarra el valor que le llega en el bucle de los divs
@@ -56,8 +64,49 @@ for (var valor in todosLosDivs) {
         seccion.append(parrafo);
     }
 }
-//});
 seccion.append(hr);
 
-// Get element by class css
-var todasLasClases = document.getElementsByClassName('');
+
+
+/**
+ * Get element by CLASS CSS: Vector de elementos rojos
+ */
+
+var divsRojos = document.getElementsByClassName('rojo');
+var divsAmarillos = document.getElementsByClassName("amarillo");
+console.log("Vector amarillos:", divsAmarillos);
+
+var div = "";
+for (div in divsRojos) {
+    //console.log(divsRojos[div]);
+    // solo los divs del vector con clase "rojo"
+    if (divsRojos[div].className == "rojo") {
+        divsRojos[div].style.background = "violet";
+    }
+}
+
+//divsRojos.style.background = "violet";
+console.log("Vector rojos:", divsRojos);
+
+var amarillo = "";
+for (amarillo in divsAmarillos) {
+    if (divsAmarillos[amarillo].className == "amarillo") {
+        divsAmarillos[amarillo].style.background = "yellow";
+    }
+}
+
+// Query Selector es mejor con IDs
+/**
+ * El Query selector no es recomendado para 
+ * seleccionar mas de 1 clase o elemento (tag).
+ */
+var idEncabezado = document.querySelector("#encabezado");
+console.log(idEncabezado);
+
+// Mas de una clase - No recomendado porque selecciona solo 1
+var claseRojo = document.querySelector("div.rojo"); 
+console.log(claseRojo);
+
+// Mas de un tag - No recomendado porque selecciona solo 1
+var tags = document.querySelector("div");
+console.log(tags);
