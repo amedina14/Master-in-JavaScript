@@ -45,3 +45,34 @@ boton.addEventListener('mouseover', () => {
 boton.addEventListener('mouseout', function(){
     boton.style.background = "royalblue";
 });
+
+// Focus
+
+var campo_nombre = document.querySelector("#campo_nombre");
+campo_nombre.addEventListener('focus', ()=>{
+    console.log("Focus dentro del campo nombre");
+});
+
+// Blur
+
+campo_nombre.addEventListener('blur', ()=>{
+    console.log("Blur del campo nombre");
+});
+
+// KeyDown
+
+campo_nombre.addEventListener('keydown', (evento)=>{
+    console.log("Pulsando este tecla:", String.fromCharCode(evento.keyCode));
+});
+
+// KeyPress
+
+campo_nombre.addEventListener('keypress', (evento)=>{
+    console.log("Tecla Pulsada:", String.fromCharCode(evento.keyCode));
+});
+
+// KeyUp
+
+campo_nombre.addEventListener('keyup', (evento)=>{
+    console.log("Tecla soltada:", String.fromCharCode(evento.keyCode));
+});
