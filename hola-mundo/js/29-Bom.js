@@ -17,7 +17,7 @@ function redirect(url){
     window.location.href = url;
 }
 */
-var abrirVentana = abrirVentana();
+
 function abrirVentana(url){
     window.open(url,"","width=400,height=400");
 }
