@@ -10,6 +10,7 @@ window.addEventListener('load', () => {
     function intervalo() {
         var tiempo = setInterval(() => {
             console.log("Set interval eject");
+            
             var header = document.querySelector("h1");
 
             if (header.style.fontSize == "50px") {
@@ -18,7 +19,7 @@ window.addEventListener('load', () => {
                 header.style.fontSize = "50px";
             }
 
-        }, 500);
+        }, 1000);
 
         return tiempo;
     }
