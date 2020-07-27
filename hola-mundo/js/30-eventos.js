@@ -29,16 +29,18 @@ window.addEventListener('load', () => {
     }
 
     /**
-     * Conecta el script al html, 
+     * Conecta el script al html, addEventListener,
      * es un escuchador de eventos separado del html.
      */
 
     var boton = document.querySelector("#boton");
 
-    // click e dblclick
+    // click e dblclick & Operador THIS
 
-    boton.addEventListener('click', () => {
+    boton.addEventListener('click', function(){
         cambiarColor();
+        console.log(this);
+        this.style.border = "10px solid black";
     });
 
     // Mouse over
