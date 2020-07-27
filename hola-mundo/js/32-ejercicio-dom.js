@@ -16,7 +16,30 @@ window.addEventListener('load', ()=>{
 
         var nombre = document.querySelector("#nombre").value;
         var apellidos = document.querySelector("#apellidos").value;
-        var edad = document.querySelector("#edad").value;
+        var edad = parseInt(document.querySelector("#edad").value);
+
+        if(nombre.trim() == null || nombre.trim().length == 0){
+            alert("Nombre no valido");
+            var msg_error_name = document.querySelector("#error_nombre");
+            msg_error_name.innerHTML = "El nombre no es valido";
+            return false;
+        } else {
+            document.querySelector("#error_nombre").style.display = "none";
+        }
+        if(apellidos.trim() == null || apellidos.trim().length == 0){
+            alert("Apellido no valido");
+            document.querySelector("#error_apellido").innerHTML = "El apellido no es valido";
+            return false;
+        } else {
+            document.querySelector("#error_apellido").style.display = "none";
+        }
+        if(edad == null || edad <= 0 || isNaN(edad)){
+            alert("Edad no valido");
+            document.querySelector("#error_edad").innerHTML = "El edad no es valido";
+            return false;
+        } else {
+            document.querySelector("#error_edad").style.display = "none";
+        }
 
         box_dashed.style.display = "block";
 
