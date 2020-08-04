@@ -3,6 +3,7 @@
 //Fetch (ajax) y peticiones a servicios / aps rest
 
 var div_usuarios = document.querySelector("#usuarios");
+var div_profesor = document.querySelector("#profesor");
 var div_janet = document.querySelector("#janet");
 
 
@@ -14,12 +15,38 @@ window.addEventListener('load', function () {
             console.log(usuarios);
             listadoUsuarios(users.data);
 
+            return getInfo();
+        })
+        .then(data => {
+            div_profesor.innerHTML = data;
+
             return getJanet();
         })
         .then(data => data.json())
         .then(user => {
             mostrarJanet(user.data);
+
         });
+
+    function getInfo() {
+        var profesor = {
+            nombre: "Adrian",
+            apellido: "Medina",
+            url: "arandom.000webhostapp.com"
+        }
+        return new Promise((resolve, reject) => {
+            var profesor_string = "";
+            setTimeout(function(){
+                profesor_string = JSON.stringify(profesor);
+
+                if(typeof profesor_string != 'string' || profesor_string == '') return reject("error 1");
+
+                return resolve(profesor_string);
+    
+            }, 3000);
+
+        });
+    }
 
     function getJanet() {
         return fetch('https://reqres.in/api/users/2');
