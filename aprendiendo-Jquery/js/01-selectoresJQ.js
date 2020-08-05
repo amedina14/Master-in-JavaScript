@@ -2,8 +2,10 @@
 // $ == JQuery (objeto), selector (document), metodo (ready).
 
 $(document).ready(function () {
+
     console.log("estamos listos");
 
+    // Selector por id
     var rojo = $("#rojo").css("background", "red")
         .css("color", "white");
 
@@ -16,15 +18,21 @@ $(document).ready(function () {
         .css("color", "yellow");
 
     // Selector de clase
-    var mi_clase = $('.zebra').css("padding","5px");
+    var mi_clase = $('.zebra').css("padding", "5px");
 
-    $(".sin_borde").click(function(){
+    $(".sin_borde").click(function () {
+        let that = $(this);
+
         console.log("has dado click");
         /* Agrega clase solo a ese elemento 
         con click. Para que funcione debe haber
         un estilo predefinido.
         */
-       $(this).addClass("zebra");
+        if (!that.hasClass('zebra')) {
+            that.addClass('zebra');
+        } else {
+            that.removeClass('zebra');
+        }
     });
 
     /* con eq tengo metodos de JQ ya adjuntos y
@@ -33,14 +41,33 @@ $(document).ready(function () {
     console.log(mi_clase.eq(1));    
     */
 
-    // Selector de etiqueta
-    var parrafos = $('p').css("cursor","pointer");
+    /**
+     * La contradiccion es que por sin borde
+     * se le agrea zebra, 
+     * y por p se la quita si la tiene.
+     * 
+     * Solucion: si le quiero quitar la zebra
+     * tengo que seleccionar elementos por clase
+     * zebra
+     */
 
-    parrafos.click(function(){
+    mi_clase.click(function () {
+        let that = $(this);
+        if (!that.hasClass('zebra')) {
+            that.addClass('zebra');
+        } else {
+            that.removeClass('zebra');
+        }
+    });
+
+    // Selector de etiqueta
+    var parrafos = $('p').css("cursor", "pointer");
+
+    parrafos.click(function () {
         var that = $(this);
-        if(!that.hasClass('grande')){
-            that.addClass("grande");
-        }else{
+        if (!that.hasClass('grande')) {
+            that.addClass('grande');
+        } else {
             that.removeClass('grande');
         }
     });
