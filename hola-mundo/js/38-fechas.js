@@ -13,3 +13,6 @@ var textoHora = `
     La hora es: ${hora}
 `;
 console.log(textoHora);
+/**Numero casual de 1 a 10,
+ * aproximando los decimales */
+console.log(Math.ceil(Math.random()*10));
