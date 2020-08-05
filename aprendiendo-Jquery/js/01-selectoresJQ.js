@@ -32,4 +32,17 @@ $(document).ready(function () {
 
     console.log(mi_clase.eq(1));    
     */
+
+    // Selector de etiqueta
+    var parrafos = $('p').css("cursor","pointer");
+
+    parrafos.click(function(){
+        var that = $(this);
+        if(!that.hasClass('grande')){
+            that.addClass("grande");
+        }else{
+            that.removeClass('grande');
+        }
+    });
+
 });
