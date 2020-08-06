@@ -76,4 +76,15 @@ $(document).ready(function () {
     $('[href="https://www.google.com"]').css('background','#ccc');
     $('[title="Facebook"]').css('background','skyblue');
 
+    // selecciona mas etiquetas
+    $('p, a').addClass('margen-superior');
+
+    // Find: busca elementos al interno
+    var busqueda_resaltado = $('#caja').find('.resaltado');
+    console.log(busqueda_resaltado);
+    // var busqueda_resaltado = $('#caja .resaltado');
+
+    // Parent: busca elementos al externo
+    var busqueda_parent = $('.resaltado').parent().parent().find('.zebra');
+    console.log(busqueda_parent);
 });
