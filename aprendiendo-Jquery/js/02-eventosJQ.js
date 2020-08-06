@@ -41,4 +41,16 @@ $(document).ready(function () {
             .css('color', 'black');
     });
 
+    // Focus y blur
+    var nombre = $('#nombre');
+    nombre.focus(function(){
+        $(this).css('border','2px solid green');
+    });
+    nombre.blur(function(){
+        $(this).css('border','1px solid #ccc');
+        //$('#datos').css('display','block');
+        var valor = $(this).val(); // agarra el valor del form
+        $('#datos').text(valor).show(); // incrusta valor dentro de otra etiqueta.
+    });
+
 });
