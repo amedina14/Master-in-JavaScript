@@ -72,4 +72,8 @@ $(document).ready(function () {
         }
     });
 
+    // Selectores por atributo
+    $('[href="https://www.google.com"]').css('background','#ccc');
+    $('[title="Facebook"]').css('background','skyblue');
+
 });
