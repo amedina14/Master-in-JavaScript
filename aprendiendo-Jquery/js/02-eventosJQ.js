@@ -50,7 +50,8 @@ $(document).ready(function () {
         $(this).css('border','1px solid #ccc');
         //$('#datos').css('display','block');
         var valor = $(this).val(); // agarra el valor del form
-        $('#datos').text(valor).show(); // incrusta valor dentro de otra etiqueta.
+        $('#datos').text(valor).show(); // text: incrusta valor dentro de otra etiqueta.
+        // show, contrario de hide, muestra elemento oculto.
     });
 
 });
