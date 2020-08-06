@@ -25,9 +25,20 @@ $(document).ready(function () {
     function fuera() {
         let questo = $(this);
         questo.css('background', 'violet')
+            .css("color", "black");
     };
 
     // Hover
-    caja.hover(dentro,fuera);
+    caja.hover(dentro, fuera);
+
+    // click y doble click, dblclick
+    caja.click(function () {
+        $(this).css("background", "blue")
+            .css("color", "white");
+    });
+    caja.dblclick(function () {
+        $(this).css('background', 'yellow')
+            .css('color', 'black');
+    });
 
 });
