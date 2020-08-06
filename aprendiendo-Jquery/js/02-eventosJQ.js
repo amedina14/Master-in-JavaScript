@@ -3,7 +3,6 @@ $(document).ready(function () {
 
     // MouseOver y MouseOut 
     var caja = $('#caja');
-
     /*
     var questo = $(this);
     caja.mouseover(function(){
@@ -17,6 +16,8 @@ $(document).ready(function () {
     caja.mouseout(afuera);
     */
 
+
+    // Hover
     function dentro() {
         let questo = $(this);
         questo.css('background', 'cyan');
@@ -28,7 +29,6 @@ $(document).ready(function () {
             .css("color", "black");
     };
 
-    // Hover
     caja.hover(dentro, fuera);
 
     // click y doble click, dblclick
