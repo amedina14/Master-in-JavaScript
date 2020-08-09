@@ -45,4 +45,29 @@ $(document).ready(function(){
         */
     });
 
+    // Animaciones
+
+    $('#animar').click(function(){
+        caja.animate({
+            marginLeft: '500',
+            fontSize: '40'
+        }, 'slow')
+        .animate({
+            borderRadius: '900',
+            marginTop: '80',
+        },'slow')
+        .animate({
+            borderRadius: '0',
+            marginLeft: '0',
+        },'slow')
+        .animate({
+            borderRadius: '100',
+            marginTop: '0',
+        },'slow')
+        .animate({
+            marginLeft: '500',
+            fontSize: '40'
+        }, 'slow')
+        ;
+    });
 });
