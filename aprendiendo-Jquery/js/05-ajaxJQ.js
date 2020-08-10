@@ -1,6 +1,39 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     //Load
     $('#datos').load('https://reqres.in/');
+
+    var id = prompt("ID sitio: ");
+    var nombre = prompt("nombre sitio: ");
+    var causa = prompt("Causa: ");
+    var solucion = prompt("Solucion: ");
+
+
+    var form = `
+    <h1>Plantilla</h1>
+    <h3>ID sitio: ${id}</h3>
+    <h3>Nombre sitio: ${nombre}</h3>
+    <h3>Causa: ${causa}</h3>
+    <h3>Solucion: ${solucion}</h3>
+    `;
+
+    // Llena el link con el contenido
+    var linkwapp = `whatsapp://send?text= 
+    *Plantilla*%0A
+    *ID sitio:* ${id} %0A
+    *Nombre sitio:* ${nombre} %0A
+    *Causa:* ${causa} %0A
+    *Solucion:* ${solucion} %0A
+    `;
+
+    // agrega direccion wsapp
+    var area = $('a');
+    area.attr('href', linkwapp);
+
+    // Muestra en html
+    $('#idSitio').text(id);
+    $('#nombreSitio').text(nombre);
+    $('#causaFalla').text(causa);
+    $('#solucionFalla').text(solucion);
 
 });
