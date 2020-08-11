@@ -19,11 +19,11 @@ $(document).ready(function () {
 
     // Llena el link con el contenido
     var linkwapp = `whatsapp://send?text= 
-    *Plantilla*%0A
+    *Atención realizada*%0A
     *ID sitio:* ${id} %0A
     *Nombre sitio:* ${nombre} %0A
     *Causa:* ${causa} %0A
-    *Solucion:* ${solucion} %0A
+    *Solución:* ${solucion} %0A
     `;
 
     // agrega direccion wsapp
