@@ -11,6 +11,25 @@ $(document).ready(function () {
         });
     });
     
+    $('#formulario').submit(function(e){
+        // evita redirigir a una pagina nueva
+        e.preventDefault();
+
+        var usuario = {
+            name: $('input[name="name"]').val(),
+            web: $('input[name="web"]').val()
+        };
+    
+        console.log(usuario);        
+        $.post($(this).attr('action'), usuario, function(response){
+            console.log(response);
+        }).done(function(){
+            alert("Usuario añadido correctamente");
+        });
+
+        return false;
+    });
+    
     /*
         var id = prompt("ID sitio: ");
         var nombre = prompt("nombre sitio: ");
