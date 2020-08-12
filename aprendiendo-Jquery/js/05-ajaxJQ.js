@@ -2,16 +2,10 @@ $(document).ready(function () {
 
     //Load
     //$('#datos').load('https://reqres.in/');
-    
+
     // Get Post
-    $.get('https://reqres.in/api/users?page=2', {page: 3}, function(response){
-        console.log(response);
-        response.data.forEach((element, index) => {
-            $('#datos').append('<p>'+element.first_name+" "+element.last_name+'</p>');
-        });
-    });
-    
-    $('#formulario').submit(function(e){
+
+    $('#formulario').submit(function (e) {
         // evita redirigir a una pagina nueva
         e.preventDefault();
 
@@ -19,19 +13,28 @@ $(document).ready(function () {
             name: $('input[name="name"]').val(),
             web: $('input[name="web"]').val()
         };
-    
-        console.log(usuario);        
-        $.post($(this).attr('action'), usuario, function(response){
+
+        console.log(usuario);
+        $.post($(this).attr('action'), usuario, function (response) {
             console.log(response);
-        }).done(function(){
+        }).done(function () {
             alert("Usuario añadido correctamente");
         });
 
+        $.get('https://reqres.in/api/users', { page: 2 }, function (response) {
+            console.log(response);
+            response.data.forEach((element, index) => {
+                $('#datos').append('<p>' + element.first_name + " " + element.last_name + '</p>');
+            });
+        });
+
+        // Asegura de no redirigir a una pagina nueva
         return false;
     });
-    
+
     /*
-        var id = prompt("ID sitio: ");
+
+    var id = prompt("ID sitio: ");
         var nombre = prompt("nombre sitio: ");
         var causa = prompt("Causa: ");
         var solucion = prompt("Solucion: ");
