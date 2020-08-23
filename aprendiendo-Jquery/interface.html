@@ -21,6 +21,19 @@
             margin: 20px;
             float: left;
         }
+        .lista-seleccionable li{
+            width: 80%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            list-style: none;
+            cursor: pointer;
+        }
+        ul .ui-selecting{
+            background: green;
+        }
+        ul .ui-selected{
+            background: blue;
+        }
         .clearfix{
             clear: both;
             float: none;
@@ -30,6 +43,14 @@
 
 <body>
     <h1>JQuery - UI</h1>
+
+    <ul class="lista-seleccionable">
+        <li>GTA V</li>
+        <li>Need for Speed</li>
+        <li>Crash Bandicoot</li>
+        <li>Super Mario</li>
+        <li>Galaxian</li>
+    </ul>
 
     <div id="" class="elemento">
         Hola, soy un elemnto de la web 1
