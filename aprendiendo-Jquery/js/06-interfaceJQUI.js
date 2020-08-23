@@ -6,6 +6,13 @@ $(document).ready(function(){
     //Redimensionar elementos
     $(".elemento").resizable();
 
-    //Seleccionar elemnetos
-    $(".lista-seleccionable").selectable();
+    //Seleccionar Elemnetos
+    //$(".lista-seleccionable").selectable();
+
+    //Ordenar Elemnetos
+    $(".lista-seleccionable").sortable({
+        update: function(event, ui){
+            console.log("ha cambiado la lista");
+        }
+    });
 });
