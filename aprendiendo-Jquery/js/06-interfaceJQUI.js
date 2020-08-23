@@ -23,4 +23,9 @@ $(document).ready(function(){
             console.log("Has soltado algo dentro de el area");
         }
     });
+
+    //Efectos
+    $("#mostrar").click(function(){
+        $(".caja-efectos").toggle("scale",4000);
+    });
 });
