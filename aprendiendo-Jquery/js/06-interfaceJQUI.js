@@ -28,4 +28,7 @@ $(document).ready(function(){
     $("#mostrar").click(function(){
         $(".caja-efectos").toggle("scale",4000);
     });
+
+    //Tooltip
+    $(document).tooltip();
 });
