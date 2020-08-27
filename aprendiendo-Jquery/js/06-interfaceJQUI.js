@@ -29,6 +29,11 @@ $(document).ready(function(){
         $(".caja-efectos").toggle("scale",4000);
     });
 
-    //Tooltip
+    //Tooltip: estan aplicados generalmente, no a un sngular elemento, sino a toda la pagina con el document.
     $(document).tooltip();
+
+    // Dialog
+    $("#lanzar-popup").click(function(){
+        $("#popup").dialog();
+    });
 });
