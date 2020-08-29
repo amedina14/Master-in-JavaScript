@@ -34,4 +34,36 @@ body{
     line-height: 80px;
     margin-bottom: 20px;
     float: left;
+    text-transform: uppercase;
+}
+
+#menu{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    background: rgb(46, 43, 43);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#menu ul{
+    line-height: 46px;
+    list-style: none;
+}
+
+#menu ul li{
+    height: 46px;
+    display: inline-block;
+    transition: all 300ms;
+}
+
+#menu ul li:hover{
+    background: #235E3D;
+}
+
+#menu ul li a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding-left: 30px;
+    padding-right: 30px;
 }
