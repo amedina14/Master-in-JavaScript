@@ -5,13 +5,29 @@
     <meta charset="utf-8" />
     <script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
 
+    <!-- jQuery Locale CSS
     <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.structure.min.css" />
     <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.theme.min.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    -->
 
+    <!-- jQuery Locale JS
     <script type="text/javascript" src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/06-interfaceJQUI.js"></script>
+    -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+    <!-- CDN de jQuery de Google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <!-- My Scripts -->
+    <script type="text/javascript" src="js/main.js"></script>
+
     <title>Project Js</title>
 </head>
 
@@ -36,7 +52,13 @@
         </header>
 
         <!-- Slider -->
-        <div id="slider"></div>
+        <div id="slider">
+            <div class="bxslider">
+                <div><img src="img/cielo.jpg" title="Cielito lindo" /></div>
+                <div><img src="img/rojo.jpg" title="Rojo.. es el color de mi cuenta" /></div>
+                <div><img src="img/hojas.jpg" title="Hojitas" /></div>
+            </div>
+        </div>
 
         <!-- Contenido -->
         <section id="contenido">
@@ -72,7 +94,7 @@
                     <h4><span>Quien soy?</span></h4>
                     <img src="img/caracol.jpg" />
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam egestas tellus vitae tincidunt
-                    pellentesque.</p>
+                        pellentesque.</p>
                 </div>
 
                 <div id="login">
@@ -81,17 +103,17 @@
                         <label for="name">
                             Nombre
                         </label>
-                        <input type="text" name="name"/>
+                        <input type="text" name="name" />
 
                         <label for="email">
                             Email
                         </label>
-                        <input type="email" name="email"/>
+                        <input type="email" name="email" />
 
                         <label for="password">
                             Password
                         </label>
-                        <input type="password" name="password"/>
+                        <input type="password" name="password" />
 
                         <input type="submit" value="Entrar">
                     </form>
