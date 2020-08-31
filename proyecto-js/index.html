@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="utf-8" />
-    <script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
 
     <!-- jQuery Locale CSS
     <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.min.css" />
@@ -11,7 +10,8 @@
     <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.theme.min.css" />
     -->
 
-    <!-- jQuery Locale JS
+    <!-- jQuery Locale JS and UI
+    <script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
     -->
 
@@ -24,6 +24,10 @@
     <!-- Slider -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <!-- Plugin Momnet JS - CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
+    <script type="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/locale/es.min.js"></script>
 
     <!-- My Scripts -->
     <script type="text/javascript" src="js/main.js"></script>
@@ -63,30 +67,7 @@
         <!-- Contenido -->
         <section id="contenido">
             <div id="posts">
-                <article class="post">
-                    <h2>Prueba del titulo</h2>
-                    <span class="date">Fecha de publicaciòn</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam egestas tellus vitae tincidunt
-                        pellentesque. Fusce ultrices, velit et feugiat venenatis, metus elit imperdiet turpis, euismod
-                        imperdiet ligula massa eu massa. Suspendisse a consequat odio, id hendrerit orci. Nullam euismod
-                        faucibus augue. Cras pulvinar nec urna et pulvinar. Pellentesque tempus interdum arcu. Nunc
-                        ligula ante, molestie nec metus id, sagittis hendrerit nibh. Nulla massa leo, aliquam eu velit
-                        viverra, auctor pulvinar est.
-                    </p>
-                    <a href="#" class="button-more">Leer màs</a>
-                </article>
-
-                <article class="post">
-                    <h2>Prueba del titulo</h2>
-                    <span class="date">Fecha de publicaciòn</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam egestas tellus vitae tincidunt
-                        pellentesque. Fusce ultrices, velit et feugiat venenatis, metus elit imperdiet turpis, euismod
-                        imperdiet ligula massa eu massa. Suspendisse a consequat odio, id hendrerit orci. Nullam euismod
-                        faucibus augue. Cras pulvinar nec urna et pulvinar. Pellentesque tempus interdum arcu. Nunc
-                        ligula ante, molestie nec metus id, sagittis hendrerit nibh. Nulla massa leo, aliquam eu velit
-                        viverra, auctor pulvinar est.</p>
-                    <a href="#" class="button-more">Leer màs</a>
-                </article>
+                <!-- Cargar posts desde un Json -->
 
             </div>
             <aside id="sidebar">
