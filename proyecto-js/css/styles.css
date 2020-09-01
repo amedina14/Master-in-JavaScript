@@ -204,3 +204,10 @@ footer{
     width: 25px;
     height: 25px;
 }
+
+.subir{
+    color: white;
+    text-decoration: none;
+    display: block;
+    float: right;
+}
