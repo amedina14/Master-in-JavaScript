@@ -189,10 +189,18 @@ footer{
 
 #to-green{
     background: #235E3D;
+    border: 1px solid #235E3D;
 }
 #to-red{
     background: #CA3413;
+    border: 1px solid #CA3413;
 }
 #to-blue{
     background: #1f87c4;
+    border: 1px solid #1f87c4;
+}
+
+#selector-theme div img{
+    width: 25px;
+    height: 25px;
 }
