@@ -107,8 +107,21 @@ $(document).ready(function () {
         });
     }
 
+    // Acordeon
+
     if (window.location.href.indexOf('about') > -1) {
         $("#acordeon").accordion();
+    }
+
+    // Reloj
+
+    if (window.location.href.indexOf('reloj') > -1) {
+
+        // Funcion que ejecuta en bucle, cada x tiempo indicado, la instrucciòn
+        setInterval(function(){
+            var reloj = moment().format('MMMM Do YYYY, h:mm:ss a');
+            $("#reloj").html(reloj);    
+        }, 1000);
     }
 
 });
