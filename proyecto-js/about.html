@@ -4,35 +4,19 @@
 <head>
     <meta charset="utf-8" />
 
-    <!-- jQuery Locale CSS
+    <!-- CSS -->
     <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.structure.min.css" />
     <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.theme.min.css" />
-    -->
-
-    <!-- jQuery Locale JS and UI
-    <script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-    -->
-
-    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link id="theme" rel="stylesheet" type="text/css" href="css/green.css" />
 
     <!-- CDN de jQuery de Google -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!-- Slider -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-
-    <!-- Plugin Momnet JS - CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
-        integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg=="
-        crossorigin="anonymous"></script>
-    <script type="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/locale/es.min.js"></script>
-
     <!-- My Scripts -->
+    <script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
     <title>Project Js</title>
@@ -57,7 +41,7 @@
 
             <nav id="menu">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="index.html">Inicio</a></li>
                     <li><a href="#">Reloj</a></li>
                     <li><a href="about.html">Sobre mi</a></li>
                     <li><a href="#">Contacto</a></li>
@@ -65,19 +49,28 @@
             </nav>
         </header>
 
-        <!-- Slider -->
-        <div id="slider">
-            <div class="bxslider">
-                <div><img src="img/cielo.jpg" title="Cielito lindo" /></div>
-                <div><img src="img/rojo.jpg" title="Rojo.. es el color de mi cuenta" /></div>
-                <div><img src="img/hojas.jpg" title="Hojitas" /></div>
-            </div>
-        </div>
-
         <!-- Contenido -->
         <section id="contenido">
-            <div id="posts">
-                <!-- Cargar posts desde un Json -->
+            <div id="box">
+                <!-- Cargar Acordeon -->
+                <h2>Sobre mi</h2>
+                <div id="acordeon">
+                    <h3>Quienes somos?</h3>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam egestas tellus vitae tincidunt
+                            pellentesque.</p>
+                    </div>
+                    <h3>Nuestros servicios</h3>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam egestas tellus vitae tincidunt
+                            pellentesque.</p>
+                    </div>
+                    <h3>Nuestros clientes</h3>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam egestas tellus vitae tincidunt
+                            pellentesque.</p>
+                    </div>
+                </div>
 
             </div>
             <aside id="sidebar">
