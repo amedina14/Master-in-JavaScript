@@ -124,4 +124,17 @@ $(document).ready(function () {
         }, 1000);
     }
 
+    // Validacion: para que funcione el plugin
+    // Comprueba que esta en la pagina contact para que funcione
+    if(window.location.href.indexOf('contact') > -1){
+
+        $('form input[name="date"]').datepicker({
+            dateFormat: 'dd-mm-yy'
+        });
+
+        $.validate({
+            lang: 'es'
+        });    
+    };
+
 });

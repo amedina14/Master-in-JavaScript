@@ -4,38 +4,22 @@
 <head>
     <meta charset="utf-8" />
 
-    <!-- jQuery Locale CSS
-    <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.min.css" />
-    <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.structure.min.css" />
-    <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.theme.min.css" />
-    -->
-
-    <!-- jQuery Locale JS and UI
-    <script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-    -->
-
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link id="theme" rel="stylesheet" type="text/css" href="css/green.css" />
 
     <!-- CDN de jQuery de Google -->
     <script src="jquery/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.structure.min.css" />
+    <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.theme.min.css" />
+    <script type="text/javascript" src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 
-    <!-- Slider -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <script src="jquery/jquery.bxslider.min.js"></script>
-
-    <!-- Plugin Momnet JS - CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
-        integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg=="
-        crossorigin="anonymous"></script>
-    <script src="jquery/es.min.js"></script>
+    <!-- Plugin form validation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
     <!--
-        Links cdn
-        https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js
-        https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/locale/es.min.js        
-        https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js
+    <script type="text/javascript" src="jquery/jquery.form-validator.min.js"></script>
+    <script src="jquery/es.min.js"></script>
     -->
 
     <!-- My Scripts -->
@@ -71,21 +55,39 @@
             </nav>
         </header>
 
-        <!-- Slider -->
-        <div id="slider">
-            <div class="bxslider">
-                <div><img src="img/cielo.jpg" title="Cielito lindo" /></div>
-                <div><img src="img/rojo.jpg" title="Rojo.. es el color de mi cuenta" /></div>
-                <div><img src="img/hojas.jpg" title="Hojitas" /></div>
-            </div>
-        </div>
-
         <!-- Contenido -->
         <section id="contenido">
-            <div id="posts">
-                <!-- Cargar posts desde un Json -->
+            <div id="box">
+                <!-- Cargar Formulario -->
+                <h2>Formulario contacto</h2>
+                <form id="form_contact" action="" method="POST">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" 
+                    data-validation="alphanumeric"/>
+
+                    <label for="surname">Apellido</label>
+                    <input type="text" name="surname" data-validation="alphanumeric"/>
+
+                    <label>Email</label>
+                    <input type="text" name="email" data-validation="email"/>
+
+                    <label for="gender">Genero</label>
+                    <select name="gender" data-validation="required">
+                        <option value="man">Hombre</option>
+                        <option value="woman">Mujer</option>
+                    </select>
+
+                    <label for="date">Fecha nacimiento</label>
+                    <input type="text" name="date" data-validation="date" data-validation-format="dd-mm-yyyy"/>
+
+                    <label for="years">Edad</label>
+                    <input type="number" name="years" data-validation="number"/>
+                    
+                    <input type="submit" value="Enviar"/>
+                </form>
 
             </div>
+
             <aside id="sidebar">
                 <div id="about">
                     <h4><span>Quien soy?</span></h4>
