@@ -1,2 +1,2 @@
-console.log('hola mundo');
-alert("hola mundo con TypeScript");
+console.log('Hola mundo');
+alert("Hola mundo con TypeScript by Microsoft");
