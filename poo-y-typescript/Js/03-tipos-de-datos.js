@@ -1,5 +1,6 @@
-// string
+// string : se puede usar | (tuberia para declarar multitipo de dato)
 var cadena = "arandom.000webhostapp.com";
+cadena = 12;
 // number
 var numero = 14;
 // Boolean
