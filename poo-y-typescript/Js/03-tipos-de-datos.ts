@@ -1,10 +1,14 @@
+// Tipos de datos personalizados
+
+type letrasYnumeros= string | number;
+
 // string : se puede usar | (tuberia para declarar multitipo de dato)
 let cadena: string | number = "arandom.000webhostapp.com";
 
 cadena = 12;
 
 // number
-let numero: number = 14;
+let numero: letrasYnumeros = "cadena"+14;
 
 // Boolean
 let verdadero_falso: boolean = true;

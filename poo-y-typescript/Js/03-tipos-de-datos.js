@@ -1,8 +1,9 @@
+// Tipos de datos personalizados
 // string : se puede usar | (tuberia para declarar multitipo de dato)
 var cadena = "arandom.000webhostapp.com";
 cadena = 12;
 // number
-var numero = 14;
+var numero = "cadena" + 14;
 // Boolean
 var verdadero_falso = true;
 // Any
