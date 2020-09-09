@@ -1,16 +1,35 @@
-/* Interface: Define que propiedades y metodos 
+/* Interface: 
+Define que propiedades y metodos 
 obligatorios va a tener una clase y debe cumplir 
 ese contrato y deben existir esos metodos definidos 
 en la interface*/
 interface CamisetaBase {
     setColor(color);
     getColor();
+    setModelo(modelo);
+    getModelo();
+    setMarca(marca);
+    getMarca();
 
 }
+
+/* Decoradores: 
+patron de diseño que hace copia de 
+una clase por medio de metadatos y modificarla en 
+funcion de parametros que reciba.*/
+function estampar(logo: string){
+    return function(target: Function){
+        target.prototype.estampacion = function():void{
+            console.log("Camiseta estampada con el logo de: "+logo);
+        }
+    }
+}
+
 
 // export: exporta clases a otros ficheros
 
 // Clase (molde del objeto)
+@estampar('Gucci Gang')
 class Camiseta implements CamisetaBase {
     // Propiedades (caracteristicas del objeto)
     private color: string;
@@ -113,3 +132,4 @@ console.log(camiseta, playera);
 
 var camiseta = new Camiseta("yellow", "manga corta", "adidas", "m", 15);
 console.log(camiseta);
+camiseta.estampacion();
