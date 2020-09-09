@@ -39,9 +39,45 @@ class Camiseta implements CamisetaBase {
         return this.color;
     }
 
+    public setModelo(modelo: string){
+        this.modelo = modelo;
+    }
+
+    public getModelo(){
+        return this.modelo;
+    }
+
+    public setMarca(marca: string){
+        this.marca = marca;
+    }
+
+    public getMarca(){
+        return this.marca;
+    }
 }
 
+// Clase hija
+class Sudadera extends Camiseta{
+    private capucha: boolean;
 
+    // Va a recibir parametro obligatoriamente un boolean
+    setCapucha(capucha: boolean){
+        this.capucha = capucha;
+    }
+
+    // Va a devolver obligatoriamente un boolean
+    getCapucha():boolean{
+        return this.capucha;
+    }
+}
+
+var sudadera_nike = new Sudadera("blanca","algodon","nike","s",5);
+// De esta manera para acceder a propiedades privadas
+sudadera_nike.setCapucha(true);
+sudadera_nike.setColor("black");
+sudadera_nike.setModelo("seda");
+sudadera_nike.setMarca("Adidas");
+console.log(sudadera_nike);
 
 /*
 
