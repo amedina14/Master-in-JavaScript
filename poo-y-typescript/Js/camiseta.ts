@@ -1,6 +1,17 @@
-// Clase (molde del objeto)
+/* Interface: Define que propiedades y metodos 
+obligatorios va a tener una clase y debe cumplir 
+ese contrato y deben existir esos metodos definidos 
+en la interface*/
+interface CamisetaBase {
+    setColor(color);
+    getColor();
+
+}
+
 // export: exporta clases a otros ficheros
-class Camiseta{
+
+// Clase (molde del objeto)
+class Camiseta implements CamisetaBase {
     // Propiedades (caracteristicas del objeto)
     private color: string;
     private modelo: string;
@@ -11,7 +22,7 @@ class Camiseta{
     // Metodos (funciones o acciones del objeto)
 
     // constructor: primer metodo que se ejecuta siempre al crear un objct y sirve para dar valor a las propiedades
-    constructor(color, modelo, marca, talla, precio){
+    constructor(color, modelo, marca, talla, precio) {
         this.color = color;
         this.modelo = modelo;
         this.marca = marca;
@@ -19,12 +30,12 @@ class Camiseta{
         this.precio = precio;
     }
 
-    public setColor(color){
+    public setColor(color) {
         // accede a propiedad/atributo privado
         this.color = color;
     }
 
-    public getColor(){
+    public getColor() {
         return this.color;
     }
 
@@ -63,3 +74,6 @@ console.log(camiseta.getColor(), playera.getColor());
 console.log(camiseta, playera);
 
 */
+
+var camiseta = new Camiseta("yellow", "manga corta", "adidas", "m", 15);
+console.log(camiseta);

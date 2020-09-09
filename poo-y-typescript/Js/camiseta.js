@@ -1,5 +1,5 @@
-// Clase (molde del objeto)
 // export: exporta clases a otros ficheros
+// Clase (molde del objeto)
 var Camiseta = /** @class */ (function () {
     // Metodos (funciones o acciones del objeto)
     // constructor: primer metodo que se ejecuta siempre al crear un objct y sirve para dar valor a las propiedades
@@ -49,4 +49,6 @@ playera.precio = 15;
 console.log(camiseta.getColor(), playera.getColor());
 console.log(camiseta, playera);
 
-*/ 
+*/
+var camiseta = new Camiseta("yellow", "manga corta", "adidas", "m", 15);
+console.log(camiseta);
