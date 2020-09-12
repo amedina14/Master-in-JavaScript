@@ -2,6 +2,14 @@
 <ul>
     <li *ngFor="let pies of zapatillas">
         {{pies.nombre}} -
-        <b>{{pies.precio}}</b>
+        <b>€ {{pies.precio}} </b>
+        <span *ngIf="pies.precio <= 80" 
+        [style.background]="pies.precio < 80 ? 'green' : 'transparent'"
+        [style.color]="pies.precio < 80 ? 'white' : 'black'"
+        [style.border-radius]="pies.precio < 80 ? '20px' : 'none'"
+        [style.padding]="pies.precio < 80 ? '5px' : 'none'"
+        >
+        ¡En oferta!
+        </span>
     </li>
 </ul>
