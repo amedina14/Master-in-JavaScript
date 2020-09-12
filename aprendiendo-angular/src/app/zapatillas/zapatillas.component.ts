@@ -8,6 +8,7 @@ import { Zapatilla } from '../models/zapatilla';
 
 export class ZapatillaComponent implements OnInit {
 
+    public color: string = "brown";
     public titulo: string;
     public zapatillas: Array<Zapatilla>; // Decl. arr. zap.
     public marcas: String[]; // Declaracion array string

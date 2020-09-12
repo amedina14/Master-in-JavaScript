@@ -22,3 +22,27 @@
         </span>
     </li>
 </ul>
+<p>El color prevalente de nuestras zapatillas es:</p>
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'blue'">
+        El color prevalente de las zapartillas es <span [ngStyle]="{'background': color,
+        'color': 'white'
+    }">Blue</span>.
+    </li>
+    <li *ngSwitchCase="'red'">
+        El color prevalente de las zapartillas es <span [ngStyle]="{'background': color,
+        'color': 'white'
+    }">Red</span>.
+    </li>
+    <li *ngSwitchCase="'green'">
+        El color prevalente de las zapartillas es <span [ngStyle]="{'background': color,
+        'color': 'white'
+    }">Green</span>.
+    </li>
+    <li *ngSwitchCase="'brown'">
+        El color prevalente de las zapartillas es <span [ngStyle]="{
+        'background': color,
+        'color': 'white'
+    }">Brown</span>.
+    </li>
+</ul>
