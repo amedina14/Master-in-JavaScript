@@ -48,7 +48,8 @@ console.log("numeros: "+ numeros);
 
 // Orden ALFABETICO
 
-var ascendente = numeros.sort((a, b) => a - b); // para numeros descendentes es b-a
+// para numeros descendentes es b-a
+var ascendente = numeros.sort((a, b) => a - b);
 
 mostrarArray(ascendente, "Ascendente");
 console.log("Orden Ascendente: ", ascendente);
@@ -67,7 +68,7 @@ document.write("<br><h3>El array tiene : " + numeros.length + " elementos </h3><
 // Busqueda
 var busqueda = parseInt(prompt("Busca ingresa numero: ", 0));
 
-// find index va usado con fn de callback
+// find index va usado con fx de callback
 var posicion = numeros.findIndex(numero => numero == busqueda);
 
 if (posicion && posicion != -1) {
