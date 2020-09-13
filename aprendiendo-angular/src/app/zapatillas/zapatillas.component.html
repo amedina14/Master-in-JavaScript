@@ -1,4 +1,16 @@
 <h2>{{ titulo }}</h2>
+
+<p>Añadir marca</p>
+<p>
+    <!--Modifica valor de la propiedad-->
+    <input type="text" [(ngModel)]="mi_marca" />
+    <button (click)="getMarca()">Mostrar</button>
+    <button (click)="addMarca()">Añadir</button>
+    <input type="number" [(ngModel)]="indice" />
+    <button (click)="delete()">Delete</button>
+</p>
+<b>{{mi_marca}}</b>
+
 <p>Compra las zapatillas de las mejores marcas</p>
 <ul>
     <li *ngFor="let itemMarcas of marcas; let i = index">{{i + ' - ' + itemMarcas}}</li>

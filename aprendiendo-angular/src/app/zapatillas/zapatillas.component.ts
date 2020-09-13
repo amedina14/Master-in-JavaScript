@@ -8,12 +8,14 @@ import { Zapatilla } from '../models/zapatilla';
 
 export class ZapatillaComponent implements OnInit {
 
+    public indice: number;
+    public mi_marca: string;
     public color: string = "brown";
     public titulo: string;
     public zapatillas: Array<Zapatilla>; // Decl. arr. zap.
     public marcas: String[]; // Declaracion array string
 
-    constructor(){
+    constructor() {
         this.titulo = "Componente Zapatillas";
 
         this.zapatillas = [
@@ -28,12 +30,12 @@ export class ZapatillaComponent implements OnInit {
     }
 
     // Muestro por consola apenas inicia
-    ngOnInit(){
+    ngOnInit() {
         console.log(this.zapatillas);
         this.getMarcas(); // invoco metd.
     }
 
-    getMarcas(){
+    getMarcas() {
         this.zapatillas.forEach((zapatilla, index) => {
 
             /**
@@ -41,13 +43,30 @@ export class ZapatillaComponent implements OnInit {
              * x < 0: no existe.
              * Del array de marcas busca si la marca
              * no existe y la agrega en el array.
-             *  */ 
-            if(this.marcas.indexOf(zapatilla.marca) < 0){ //push marca solo si no existe ya
+             *  */
+            if (this.marcas.indexOf(zapatilla.marca) < 0) { //push marca solo si no existe ya
                 this.marcas.push(zapatilla.marca);
             }
 
             //console.log(index);
         });
         console.log(this.marcas); // array en consola
+    }
+
+    getMarca(){
+        if (this.mi_marca) alert(this.mi_marca);
+    }
+
+    addMarca() {
+        if (this.mi_marca) {
+            this.marcas.push(this.mi_marca);
+        }
+    }
+
+    delete() {
+        if (this.indice) {
+            // elimina 1 elemente con indice
+            this.marcas.splice(this.indice, 1);
+        }
     }
 }
