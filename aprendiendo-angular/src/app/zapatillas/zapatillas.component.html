@@ -7,13 +7,15 @@
     <button (click)="getMarca()">Mostrar</button>
     <button (click)="addMarca()">Añadir</button>
     <input type="number" [(ngModel)]="indice" />
-    <button (click)="delete()">Delete</button>
+    <button (click)="deleteById()">Delete</button>
 </p>
 <b>{{mi_marca}}</b>
 
 <p>Compra las zapatillas de las mejores marcas</p>
 <ul>
-    <li *ngFor="let itemMarcas of marcas; let i = index">{{i + ' - ' + itemMarcas}}</li>
+    <li *ngFor="let itemMarcas of marcas; let i = index">{{i + ' - ' + itemMarcas}}
+        <button (click)="deleteMarca(i)">Delete</button>
+    </li>
 </ul>
 
 <p>Zapatillas disponiles!</p>

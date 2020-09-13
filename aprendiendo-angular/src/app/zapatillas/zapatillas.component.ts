@@ -63,10 +63,17 @@ export class ZapatillaComponent implements OnInit {
         }
     }
 
-    delete() {
+    deleteById() {
+        //No es buena practica.
         if (this.indice) {
             // elimina 1 elemente con indice
             this.marcas.splice(this.indice, 1);
         }
+    }
+
+    //Es buena practica.
+    deleteMarca(i){
+        // delete this.marcas[i];
+        this.marcas.splice(i,1);
     }
 }
