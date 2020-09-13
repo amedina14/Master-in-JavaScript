@@ -35,6 +35,7 @@
     </li>
 </ul>
 <p>El color prevalente de nuestras zapatillas es:</p>
+<input type="text" [(ngModel)]="color" />
 <ul [ngSwitch]="color">
     <li *ngSwitchCase="'blue'">
         El color prevalente de las zapartillas es <span [ngStyle]="{'background': color,
