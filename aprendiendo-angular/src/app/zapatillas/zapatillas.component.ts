@@ -53,27 +53,32 @@ export class ZapatillaComponent implements OnInit {
         console.log(this.marcas); // array en consola
     }
 
-    getMarca(){
+    getMarca() {
         if (this.mi_marca) alert(this.mi_marca);
     }
 
     addMarca() {
+        // Si hay un valor
         if (this.mi_marca) {
-            this.marcas.push(this.mi_marca);
+            // Si no està reperido
+            if (this.marcas.indexOf(this.mi_marca) < 0) {
+                // Lo agrega
+                this.marcas.push(this.mi_marca);
+            }
         }
     }
 
     deleteById() {
-        //No es buena practica.
-        if (this.indice) {
-            // elimina 1 elemente con indice
+        //No es buena practica sin parametro.
+        if (this.indice >= 0) {
+            // elimina 1 elemento con indice x
             this.marcas.splice(this.indice, 1);
         }
     }
 
     //Es buena practica.
-    deleteMarca(i){
+    deleteMarca(i) {
         // delete this.marcas[i];
-        this.marcas.splice(i,1);
+        this.marcas.splice(i, 1);
     }
 }
