@@ -25,13 +25,16 @@
             'text-decoration': !pies.stock ? 'line-through' : 'none'
         }">
             {{pies.nombre}} -
-            <b>€ {{pies.precio}} </b>
+            <b [class.altoPrecio]="pies.precio >= 80 "
+                >€ {{pies.precio}} </b>
         </span>
 
-        <span *ngIf="pies.precio <= 80" [style.background]="pies.precio < 80 ? 'green' : 'transparent'"
+        <span *ngIf="pies.precio <= 80" 
+            [style.background]="pies.precio < 80 ? 'green' : 'transparent'"
             [style.color]="pies.precio < 80 ? 'white' : 'black'"
             [style.border-radius]="pies.precio < 80 ? '20px' : 'none'"
-            [style.padding]="pies.precio < 80 ? '5px' : 'none'">
+            [style.padding]="pies.precio < 80 ? '5px' : 'none'"            
+            >
             ¡En oferta!
         </span>
     </li>
