@@ -24,9 +24,23 @@
         <span [ngStyle]="{
             'text-decoration': !pies.stock ? 'line-through' : 'none'
         }">
+        <span [ngClass]="{
+            'subrayado': pies.marca == 'Adidas'
+        }">
+            {{pies.marca}}
+        </span>
+        <span> - </span>
             {{pies.nombre}} -
-            <b [class.altoPrecio]="pies.precio >= 80 "
-                >€ {{pies.precio}} </b>
+            <b 
+                [class.altoPrecio]="pies.precio >= 80"
+                [ngClass]="{
+                    'fondoRojo': pies.precio >= 100,
+                    'subrayado': pies.marca == 'Adidas'
+                }"
+
+            >
+                € {{pies.precio}} 
+            </b>
         </span>
 
         <span *ngIf="pies.precio <= 80" 
