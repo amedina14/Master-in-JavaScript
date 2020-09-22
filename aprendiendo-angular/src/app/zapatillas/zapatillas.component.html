@@ -4,8 +4,8 @@
 <p>
     <!--Modifica valor de la propiedad-->
     <input type="text" [(ngModel)]="mi_marca" (keyup.enter)="mostrarPalabra()"/>
-    <button (click)="getMarca()">Mostrar</button>
-    <button (click)="addMarca()">Añadir</button>
+    <button (click)="getMarca()">Mostrar</button>&nbsp;
+    <button (click)="addMarca()">Añadir</button>&nbsp;
     <input type="number" [(ngModel)]="indice" />
     <button (click)="deleteById()">Delete ById</button>
 </p>
@@ -37,7 +37,6 @@
                     'fondoRojo': pies.precio >= 100,
                     'subrayado': pies.marca == 'Adidas'
                 }"
-
             >
                 € {{pies.precio}} 
             </b>

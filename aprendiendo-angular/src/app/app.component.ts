@@ -9,7 +9,7 @@ import { Configuracion } from './models/configuracion';
 export class AppComponent {
   public title = 'Master JS - Angular';
   public descripcion: string;
-  public mostrar_videojuegos: boolean = true;
+  public mostrar_videojuegos: boolean = false;
   public config;
 
   constructor(){
