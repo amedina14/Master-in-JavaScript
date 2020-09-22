@@ -3,18 +3,18 @@
 <p>Añadir marca</p>
 <p>
     <!--Modifica valor de la propiedad-->
-    <input type="text" [(ngModel)]="mi_marca" />
+    <input type="text" [(ngModel)]="mi_marca" (keyup.enter)="mostrarPalabra()"/>
     <button (click)="getMarca()">Mostrar</button>
     <button (click)="addMarca()">Añadir</button>
     <input type="number" [(ngModel)]="indice" />
-    <button (click)="deleteById()">Delete</button>
+    <button (click)="deleteById()">Delete ById</button>
 </p>
 <b>{{mi_marca}}</b>
 
 <p>Compra las zapatillas de las mejores Marcas</p>
 <ul>
     <li *ngFor="let itemMarcas of marcas; let i = index">{{i + ' - ' + itemMarcas}}
-        <button (click)="deleteMarca(i)">Delete</button>
+        <button (click)="deleteMarca(i)">Delete Marca</button>
     </li>
 </ul>
 

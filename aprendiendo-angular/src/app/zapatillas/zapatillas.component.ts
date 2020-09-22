@@ -81,4 +81,12 @@ export class ZapatillaComponent implements OnInit {
         // delete this.marcas[i];
         this.marcas.splice(i, 1);
     }
+
+    onBlur(){
+        console.log("Has salido del input");
+    }
+
+    mostrarPalabra(){
+        alert(this.mi_marca);        
+    }
 }
