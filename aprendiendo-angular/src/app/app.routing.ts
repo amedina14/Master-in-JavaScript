@@ -22,5 +22,5 @@ const appRoutes: Routes = [
 // Exportar el modulo del router
 // Exportamos el servicio
 export const appRoutingProviders: any[] = [];
-// Exportamos el modulo
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes); 
+// Exportamos el modulo: (deprecate) ModuleWithProviders
+export const routing = RouterModule.forRoot(appRoutes); 
