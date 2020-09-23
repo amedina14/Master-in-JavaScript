@@ -19,7 +19,7 @@ const appRoutes: Routes = [
     {path:'cursos', component: CursosComponent},
     {path:'cursos/:nombre/:followers', component: CursosComponent},
 //    {path:'cursos/:nombre/:apellidos', component: CursosComponent},
-    {path: '**', component: HomeComponent}
+    {path: '**', component: HomeComponent} //si la ruta es errada manda a la Home
 ];
 
 // Exportar el modulo del router
