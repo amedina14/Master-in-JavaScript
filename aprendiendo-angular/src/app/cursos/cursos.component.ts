@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-cursos',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursosComponent implements OnInit {
 
-  constructor() { }
+  public nombre: String;
+  public followers: number;
 
-  ngOnInit(): void {
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router
+  ) { }
+
+  ngOnInit() {
+    this._route.params.subscribe((params: Params) => {
+      this.nombre = params.nombre;
+      this.followers = +params.followers; // el "+" covierte a number
+      //this.nombre = params['nombre'];
+      //console.log(this.nombre);
+      //console.log(typeof +params.followers);
+    })
   }
 
 }
