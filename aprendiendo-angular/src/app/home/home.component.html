@@ -2,8 +2,7 @@
 
 <div *ngIf="identificado; else noIdentificado">
     <h3>Estas identificado</h3>
-    <button class="btn btn-primary" 
-    type="button" (click)="unsetIdentificacion()">
+    <button (click)="unsetIdentificacion()">
         Logout
     </button>
 </div>
@@ -11,8 +10,7 @@
     <h3>
         Fin de sesion
     </h3>
-    <button class="btn btn-primary" 
-    type="button" (click)="setIdentificacion()">
+    <button (click)="setIdentificacion()">
         Login
     </button>
 </ng-template>
