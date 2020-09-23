@@ -1,1 +1,18 @@
-<p>home works!</p>
+<h2>Bienvenido a la Home</h2>
+
+<div *ngIf="identificado; else noIdentificado">
+    <h3>Estas identificado</h3>
+    <button class="btn btn-primary" 
+    type="button" (click)="unsetIdentificacion()">
+        Logout
+    </button>
+</div>
+<ng-template #noIdentificado>
+    <h3>
+        Fin de sesion
+    </h3>
+    <button class="btn btn-primary" 
+    type="button" (click)="setIdentificacion()">
+        Login
+    </button>
+</ng-template>
