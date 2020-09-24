@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Zapatilla } from '../models/zapatilla';
+import { ZapatillaService } from '../service/zapatilla.service';
 
 @Component({
     selector: 'zapatilla',
-    templateUrl: './zapatillas.component.html'
+    templateUrl: './zapatillas.component.html',
+    providers: [ZapatillaService]
 })
 
 export class ZapatillaComponent implements OnInit {
@@ -15,15 +17,13 @@ export class ZapatillaComponent implements OnInit {
     public zapatillas: Array<Zapatilla>; // Decl. arr. zap.
     public marcas: String[]; // Declaracion array string
 
-    constructor() {
+    constructor(
+        // injectar servicio como dependencia dentro de propiedad
+        private _zapatillaService: ZapatillaService
+    ) {
         this.titulo = "Componente Zapatillas";
-
-        this.zapatillas = [
-            new Zapatilla("Gazzelle", 40, "Adidas", "blue", false),
-            new Zapatilla("Chancletality", 100, "Nike", "red", true),
-            new Zapatilla("Gazzelle", 90, "Adidas", "green", true),
-            new Zapatilla("Boots Cowboy", 39, "Mr Jones", "brown", true),
-        ];
+        this.color = '';
+        this.mi_marca = "";
 
         // Se inicializa el array vacio
         this.marcas = new Array();
@@ -31,6 +31,8 @@ export class ZapatillaComponent implements OnInit {
 
     // Muestro por consola apenas inicia
     ngOnInit() {
+        this.zapatillas = this._zapatillaService.getZapatilla();
+
         console.log(this.zapatillas);
         this.getMarcas(); // invoco metd.
     }
@@ -89,4 +91,7 @@ export class ZapatillaComponent implements OnInit {
     mostrarPalabra(){
         alert(this.mi_marca);        
     }
+
+
+
 }
