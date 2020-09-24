@@ -1,6 +1,10 @@
 <p>request works!</p>
 <input [(ngModel)]="userId" (keyup.enter)="cargaUsuario()"/>
 
+<div *ngIf="!user">
+    Cargando...
+</div>
+
 <div *ngIf="user">
     <img src="{{user.data.avatar}}" width="127" />
     <h2>{{user.data.first_name}} {{user.data.last_name}}</h2>

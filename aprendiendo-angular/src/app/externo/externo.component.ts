@@ -26,6 +26,7 @@ export class ExternoComponent implements OnInit {
   }
 
   cargaUsuario() {
+    this.user = false;
     // para recojer el resultado de la peticion ajax uso subscribe
     this._peticionesService.getUser(this.userId).subscribe(
       result => {
