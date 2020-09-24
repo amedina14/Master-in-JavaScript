@@ -4,7 +4,9 @@
     <span>
         {{fecha | date:'dd/MM/yy'}}
         - 
-        {{fecha | date:'fullDate'}}
+        {{fecha | date:'fullDate' | uppercase}}
+        <br>
+        {{ 'CONVERTED TO LOWERCASE' | lowercase }}
     </span>
 </p>
 <div>
