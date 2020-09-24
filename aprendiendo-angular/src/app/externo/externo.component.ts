@@ -11,6 +11,7 @@ export class ExternoComponent implements OnInit {
 
   public user: any;
   public userId: any;
+  public fecha: any;
 
   constructor(
     private _peticionesService: PeticionesService
@@ -19,9 +20,11 @@ export class ExternoComponent implements OnInit {
   }
 
   /**
-   * Invico el servicio de "peticiones"
+   * Invoco el servicio de "peticiones"
    */
   ngOnInit(): void {
+
+    this.fecha = new Date(); //new Date(2019,5,20)
     this.cargaUsuario();
   }
 

@@ -1,5 +1,15 @@
-<p>request works!</p>
-<input [(ngModel)]="userId" (keyup.enter)="cargaUsuario()"/>
+<p>request works!
+    <br/>
+    <!--{{fecha | date:'fullDate'}}-->
+    <span>
+        {{fecha | date:'dd/MM/yy'}}
+        - 
+        {{fecha | date:'fullDate'}}
+    </span>
+</p>
+<div>
+    <input [(ngModel)]="userId" (keyup.enter)="cargaUsuario()" />
+</div>
 
 <div *ngIf="!user">
     Cargando...
