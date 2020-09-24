@@ -21,7 +21,8 @@ export class CursosComponent implements OnInit {
     this._route.params.subscribe((params: Params) => {
       this.nombre = params.nombre;
       // Es obligatorio pasarle followers
-      this.followers = +params.followers; // el "+" covierte a number
+      // el "+" covierte a number
+      this.followers = +params.followers; 
 
       //this.nombre = params['nombre'];
       //console.log(this.nombre);

@@ -46,7 +46,8 @@ export class ZapatillaComponent implements OnInit {
              * Del array de marcas busca si la marca
              * no existe y la agrega en el array.
              *  */
-            if (this.marcas.indexOf(zapatilla.marca) < 0) { //push marca solo si no existe ya
+            if (this.marcas.indexOf(zapatilla.marca) < 0) { 
+                //push marca solo si no existe ya
                 this.marcas.push(zapatilla.marca);
             }
 
@@ -91,7 +92,5 @@ export class ZapatillaComponent implements OnInit {
     mostrarPalabra(){
         alert(this.mi_marca);        
     }
-
-
 
 }

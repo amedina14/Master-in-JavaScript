@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ZapatillaComponent } from './zapatillas/zapatillas.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { CursosComponent} from './cursos/cursos.component';
+import { ExternoComponent } from './externo/externo.component';
 
 // Array de rutas
 const appRoutes: Routes = [
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
     {path:'videojuego', component: VideojuegoComponent},
     {path:'cursos', component: CursosComponent},
     {path:'cursos/:nombre/:followers', component: CursosComponent},
-//    {path:'cursos/:nombre/:apellidos', component: CursosComponent},
+    //    {path:'cursos/:nombre/:apellidos', component: CursosComponent},
+    {path:'externo', component: ExternoComponent},
     {path: '**', component: HomeComponent} //si la ruta es errada manda a la Home
 ];
 
