@@ -11,6 +11,46 @@
         {{4 | calculadora: 2}}
     </span>
 </p>
+
+
+<hr/>
+<!--Al metodo onSubmit le paso el form newUser en si
+    para resetearlo depues del envio.
+-->
+<h2>Crear usuario</h2>
+<form #newUser="ngForm" (ngSubmit)="onSubmit(newUser)">
+    <p>
+        <label for="nombre"
+        style="margin-right: 10px;">
+        Nombre
+        </label>
+        <input type="text" name="name" #name="ngModel" 
+        [(ngModel)]="new_user.name" required/>
+        <sapn *ngIf="name.touched && !name.valid">
+            Nombre no valido
+        </sapn>
+    </p>
+    <p>
+        <label for="job" 
+        style="margin-right: 41px;">
+        job
+        </label>
+        <input type="text" name="job" #job="ngModel" 
+        [(ngModel)]="new_user.job" required/>
+        <sapn *ngIf="job.touched && !job.valid">
+            Job no valid
+        </sapn>
+    </p>
+    <input type="submit" value="Guardar usuario" [disabled]="!newUser.form.valid"/>
+</form>
+<div *ngIf="usuario_guardado">
+    <h3>User saved successfully</h3>
+    <p>{{usuario_guardado.name}}</p>
+    <p>{{usuario_guardado.job}}</p>
+</div>
+
+<hr/>
+
 <div>
     <input [(ngModel)]="userId" (keyup.enter)="cargaUsuario()" />
 </div>

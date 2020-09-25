@@ -13,15 +13,13 @@ import { DefaultComponent } from './default/default.component';
 
 // Array de rutas
 const appRoutes: Routes = [
-    {
-        path: '', component: HomeComponent
-    },
+    {path: '', component: HomeComponent},
     {path:'home', component: HomeComponent},
     {path:'zapatillas', component: ZapatillaComponent},
     {path:'videojuego', component: VideojuegoComponent},
     {path:'cursos', component: CursosComponent},
     {path:'cursos/:nombre/:followers', component: CursosComponent},
-    //    {path:'cursos/:nombre/:apellidos', component: CursosComponent},
+    //{path:'cursos/:nombre/:apellidos', component: CursosComponent},
     {path:'externo', component: ExternoComponent},
     {path:'contacto', component: ContactoComponent},
     {path:'default', component: DefaultComponent},
