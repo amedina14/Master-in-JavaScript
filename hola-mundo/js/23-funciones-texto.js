@@ -27,7 +27,10 @@ busqueda = texto1.replace("JavaScript","JS"); //remplaza elemento por otro
 busqueda = texto1.slice(14, 22); //corta cadena desde la posicion
 busqueda = texto1.split(" "); //mete en array y se puede indicar separador
 busqueda = texto1.trim(); //Recorta los espacion por delante y detras. Ej. Util para user y password
-
+/**
+ * elimina 1 elemento a partir del indice "this.indice" 
+ * this.palabras.splice(this.indice, 1);
+ */
 console.log(busqueda);
 
 
