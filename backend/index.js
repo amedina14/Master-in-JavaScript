@@ -3,10 +3,11 @@
 /**
  * Cargo el modulo/clase/libreria mongoose
  * Para realizar la conexion al DB con promise.
+ * Importar el servidor "app.js"
  */
-var mongoose = require('mongoose');
-var app = require('./app');
-var port = 3700;
+const mongoose = require('mongoose');
+const app = require('./app');
+const port = 3700;
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/portafolio')

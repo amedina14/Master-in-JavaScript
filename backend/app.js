@@ -1,9 +1,9 @@
 'use strict'
 
-var express = require('express');
-var bodyParser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
 
-var app = express();
+const app = express();
 
 // Cargar archivos de rutas.
 
@@ -26,7 +26,11 @@ app.get('/', (req, res) => {
     );
 });
 
-app.get('/test', (req, res) => {
+app.post('/test/:id', (req, res) => {
+    console.log(req.body.name);
+    console.log(req.query.web);
+    console.log(req.params.id);
+
     res.status(200).send({
         message:"Ciao mondo dalla mia api NodeJs"
     });
