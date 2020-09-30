@@ -48,7 +48,28 @@ const controller = {
             message: "Metodo saveProject"
         });
         */
+    },
+    /**
+     * Listar proyecto por ID
+     * @param {pide los datos del id de la url} req 
+     * @param {devuelve el proyecto si lo encuentra} res 
+     */
+    getProject: function(req, res){
+        let projectId = req.params.id;
+
+        // Si el id es opcional, validar con esta condicion
+        if(projectId == null) return res.status(404).send({message: 'Datos del ID proyecto vacio.'});
+
+        // findById: metodo de mongoose.
+        Project.findById(projectId, (err, project) => {
+
+            if (err) return res.status(500).send({message: 'Error al retornar los datos.'});
+
+            if(!project) return res.status(404).send({message: 'El proyecto no exixte'});
+
+            return res.status(200).send({project});
+        });
     }
-}
+};
 
 module.exports = controller;
