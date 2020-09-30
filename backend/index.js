@@ -9,8 +9,9 @@ const mongoose = require('mongoose');
 const app = require('./app');
 const port = 3700;
 
+mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/portafolio')
+mongoose.connect('mongodb://localhost:27017/portafolio', {useNewUrlParser:true, useUnifiedTopology:true})
     .then(() => {
         console.log("Conectado al DB con exito!");
 
