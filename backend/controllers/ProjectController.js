@@ -116,9 +116,26 @@ const controller = {
 
             return res.status(200).send({
                 project: projectUpdate
-            })
-        })
-    }
+            });
+        });
+    },
+    /**
+     * Delete project
+    */
+    deleteProject: function(req, res){
+        let projectId = req.params.id;
+
+        Project.findByIdAndRemove(projectId, (err, projectDeleted) => {
+
+            if(err) return res.status(500).send({message: "Error al borrar el proyecto"});
+
+            if(!projectDeleted) return res.status(404).send({message: "id del proyecto no encontrado"});
+
+            return res.status(200).send({
+                project: projectDeleted
+            });
+        });
+    },
 };
 
 module.exports = controller;
