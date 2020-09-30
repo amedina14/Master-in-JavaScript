@@ -69,7 +69,32 @@ const controller = {
 
             return res.status(200).send({project});
         });
-    }
+    },
+    /**
+     * Metodo para listar todos los proyectos
+     */
+    getProjects: function(req, res){
+
+        // Saca todos los documentos de una entidad o coleccion de datos
+        /**
+         * find({year:2020}) = Es como un where, busca en base a condicion.
+         * sort('-name') = Ordenar de Z a A (de reciente a antiguo).
+         * sort('name') = Ordenar de A a Z (antiguo a reciente).
+         * sort('-year') = Ordenar de año reciente a antiguo (mayor a menor).
+         * sort('year') = Ordenar de año antiguo al màs reciente (menor a mayor).
+         */
+        Project.find({}).sort('-name').exec((err, projects) => {
+            
+            if(err) return res.status(500).send({message: "Error al devolver los datos"});
+
+            if(!projects) return res.status(404).send({message: "no hay proyectos para mostrar"});
+
+            return res.status(200).send({
+                projects
+            });
+
+        });
+    },
 };
 
 module.exports = controller;
