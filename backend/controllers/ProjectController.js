@@ -6,6 +6,7 @@
  * Importar el modelo project
 */
 
+// Modelo
 const Project = require('../models/project');
 
 const controller = {
@@ -95,6 +96,29 @@ const controller = {
 
         });
     },
+    /**
+     * Actualizar documento de la base de datos
+     */
+    updateProject: function(req, res){
+        // Recoger id del projecto a actualizar
+        let projectId = req.params.id;
+        // Recoger contenido que se va a actualizar
+        let update = req.body;
+
+        Project.findByIdAndUpdate(projectId, update, {new:true}, (err, projectUpdate) => {
+
+            if(err) return res.status(500).send({message:"Error al actualizar el proyecto"});
+
+            // (facultativo)
+            if(!projectId) return res.status(404).send({message:"Proyecto no encontrado"});
+
+            if(!projectUpdate) return res.status(404).send({message:"Nuevo Proyecto no encontrado para actualizar"});
+
+            return res.status(200).send({
+                project: projectUpdate
+            })
+        })
+    }
 };
 
 module.exports = controller;

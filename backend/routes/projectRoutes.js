@@ -19,5 +19,7 @@ router.post('/test', projectController.test);
 router.post('/save-project', projectController.saveProject);
 router.get('/project/:id?', projectController.getProject);
 router.get('/projects', projectController.getProjects);
+// Para actualizar recursos en un API se usa PUT
+router.put('/update/:id', projectController.updateProject);
 
 module.exports = router;
