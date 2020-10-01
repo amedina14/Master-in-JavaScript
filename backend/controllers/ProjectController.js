@@ -136,6 +136,48 @@ const controller = {
             });
         });
     },
+    /**
+     * Metodo per caricare immagini
+     */
+    uploadImage: (req, res) => {
+        const projectId = req.params.id;
+        const fileName = 'Imagen no subida...';
+
+        /**
+         * 1. Para usar req.files es necesario usar un plugin como connect-multiparty.
+         * 2. Luego configurar el multiparti.
+         * 3. Recoger la imagen y guardarla en el DB
+         * 4. fileSplit[1]: recorta y agarra solo el nombre del file en el indice 1.
+         * 5. Invocar metodo del ORM findByIdAndUpdate con parametros
+         * (prId, {objImg: val}, (callback))
+         * 6. Con {new: true} devuelve el ultimo obj guadado en la DB
+         */
+        if(req.files){
+
+            const filePath = req.files.image.path;
+            const fileSplit = filePath.split('\\');
+            const fileName = fileSplit[1];
+
+            Project.findByIdAndUpdate(projectId, {image: fileName}, {new: true}, (err, projectUpdated) => {
+
+                if(err) return res.status(500).send({message: 'Error al cargar la imagen'});
+
+                if(!projectUpdated) return res.status(404).send({message:'El projecto no existe. Imagen no cargada.'});
+
+                return res.status(200).send({
+                    project: projectUpdated
+                    //files: fileName 
+                    //files: req.files
+                });
+
+            });
+        }
+        else{
+            return res.status(200).send({
+                message: fileName
+            });
+        }
+    }
 };
 
 module.exports = controller;
