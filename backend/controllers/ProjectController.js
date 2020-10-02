@@ -9,6 +9,9 @@
 // Modelo
 const Project = require('../models/project');
 
+// Import lib (file system) para borrar img de ./uploads
+const fs = require('fs');
+
 const controller = {
 
     home: function(req, res){
@@ -151,26 +154,41 @@ const controller = {
          * 5. Invocar metodo del ORM findByIdAndUpdate con parametros
          * (prId, {objImg: val}, (callback))
          * 6. Con {new: true} devuelve el ultimo obj guadado en la DB
+         * 7. Validar imagen con extension correcta: jpg,png,jpeg,gif.
          */
         if(req.files){
 
             const filePath = req.files.image.path;
             const fileSplit = filePath.split('\\');
             const fileName = fileSplit[1];
+            // Divido la stringa en vector
+            const extensionSplit = fileName.split('\.');
+            // Y agarro el indice
+            const extFile = extensionSplit[1];
 
-            Project.findByIdAndUpdate(projectId, {image: fileName}, {new: true}, (err, projectUpdated) => {
+            
+            if(extFile == 'png' || extFile == 'jpg' || extFile == 'jpeg' || extFile== 'gif'){
 
-                if(err) return res.status(500).send({message: 'Error al cargar la imagen'});
-
-                if(!projectUpdated) return res.status(404).send({message:'El projecto no existe. Imagen no cargada.'});
-
-                return res.status(200).send({
-                    project: projectUpdated
-                    //files: fileName 
-                    //files: req.files
+                Project.findByIdAndUpdate(projectId, {image: fileName}, {new: true}, (err, projectUpdated) => {
+                                        
+                    if(err) return res.status(500).send({message: 'Error al cargar la imagen'});
+                    
+                    if(!projectUpdated) return res.status(404).send({message:'El projecto no existe. Imagen no cargada.'});
+                    
+                    return res.status(200).send({
+                        project: projectUpdated
+                        //files: fileName 
+                        //files: req.files
+                    });
                 });
 
-            });
+            }else{
+                // En caso de no ser correcta la extension, borro el archivo con methd de nodejs
+                fs.unlink(filePath, (err) => {
+                    return res.status(200).send({message: 'La extension no es valida'});
+                });
+            }
+
         }
         else{
             return res.status(200).send({
