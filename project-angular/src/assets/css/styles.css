@@ -54,7 +54,7 @@ header .nav{
 
 header .nav li{
     display: inline-block;
-    margin: 0px auto;
+    /*margin: 0px auto;*/
     text-align: center;
     line-height: 90px;
 }
@@ -88,6 +88,18 @@ header a:hover{
     background-color: transparent;
     color: black;
     transform: scale(1.50,1.50);
+}
+
+/* Contenedor principal */
+#content{
+    min-height: 700px;
+    width: 75%;
+    margin: 0px auto;
+    box-shadow: 0px 0px 40px black;
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;
+    background-color: rgba(230, 230, 230, 0.7);
+    padding-top: 120px;
 }
 
 /*
