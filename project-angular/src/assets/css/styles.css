@@ -142,8 +142,8 @@ footer{
         display: none;
     }
     #logo{
-/*        order: 5;
-*/    }
+        order: 1;
+    }
     .about-me{
     }
     .projects{
