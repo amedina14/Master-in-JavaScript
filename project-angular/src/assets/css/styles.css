@@ -129,8 +129,32 @@ footer{
     Si deve collapsare in un tasto toggle
     */
     header .nav{
-        width: 75%;
+        display: flex;
+        justify-content: center;
+        align-items: initial;
+        flex-flow: column-reverse;
+        width: 35%;
+        position: relative;
+        top: 180px;
     }
+    .link{
+        flex-grow: 1;
+        display: none;
+    }
+    #logo{
+/*        order: 5;
+*/    }
+    .about-me{
+    }
+    .projects{
+/*        order: 3;
+*/    }
+    .create{
+/*        order: 4;
+*/    }
+    .contact{
+/*        order: 5;
+*/    }
 }
 /*
 @media(min-width: 525px){
