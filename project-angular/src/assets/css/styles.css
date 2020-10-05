@@ -38,26 +38,28 @@ header{
     height: 90px;
     background-color: rgba(53, 103, 164, 0.8);
     position: fixed;
-    top: 0px;
     text-transform: uppercase;
 }
 
-.nav{
-    display: block;
-    width: 50%;
+header .nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 38%;
     height: inherit;
     margin: 0px auto;
+    margin-top: 0px;
 }
 
-.nav li{
+header .nav li{
     display: inline-block;
     margin: 0px auto;
-    list-style: none;
     text-align: center;
     line-height: 90px;
 }
 
-.nav a{
+header .nav a{
     display: block;
     padding-left: 20px;
     padding-right: 20px;
@@ -72,6 +74,110 @@ header a:hover{
 }
 
 /* Logo */
-header #logo a:hover{
-    background-color: transparent;
+
+#logo{
+    font-family: "finger";
+    font-size: 30px;
 }
+
+#logo a{
+    transition: color 500ms, transform 500ms;
+}
+
+#logo a:hover{
+    background-color: transparent;
+    color: black;
+    transform: scale(1.50,1.50);
+}
+
+/*
+.nav .about-me{
+    width: 15%;
+}
+*/
+/*MediaQuery*/
+/*
+@media(min-width: 525px){
+    header .nav{
+        width: 80%;
+        padding-left: 9%;
+    }
+}
+@media(min-width: 625px){
+    header .nav{
+        width: 73%;
+        padding-left: 9%;
+    }
+}
+@media(min-width: 725px){
+    header .nav{
+        width: 60%;
+        padding-left: 5%;
+    }
+}
+@media(min-width: 845px){
+    header .nav{
+        width: 55%;
+        padding-left: 9%;
+    }
+}
+@media(min-width: 946px){
+    header .nav{
+        width: 46%;
+        padding-left: 9%;
+    }
+}
+@media(min-width: 1200px){
+    header .nav{
+        width: 40%;
+        padding-left: 9%;
+    }
+}
+@media(min-width: 1366px){
+    header .nav{
+        width: 33%;
+        padding-left: 0%;
+    }
+}
+@media(min-width: 1367px) and (max-width: 1920px){
+    header .nav{
+        width: 23%;
+    }
+}
+*/
+/*
+@media(min-width: 1880px){
+    header .nav{
+        width: 33%;
+    }
+}
+@media(min-width: 1327px) and (max-width: 1879px){
+    header .nav{
+        width: 33%;
+    }
+}
+@media(min-width: 1201px) and (max-width: 1326px){
+    header .nav{
+        width: 44%;
+        padding-left: 10%;
+    }
+}
+@media(min-width: 871px) and (max-width: 1200px){
+    header .nav{
+        width: 50%;
+        padding-left: 7%;
+    }
+}
+@media(max-width: 870px) and (min-width: 753px){
+    header .nav{
+        width: 50%;
+        font-size: 15px;
+        margin: 0px auto;
+    }
+}
+@media(min-width: 414px) and (max-width: 752px){
+    header .nav{
+        width: 26%;
+    }
+}
+*/
