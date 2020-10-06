@@ -69,7 +69,10 @@ header .nav a{
     transition: all 300ms;
 }
 
-.navPhone{
+header .navPhone{
+    display: none;
+}
+header .navPhone li{
     display: none;
 }
 
@@ -122,6 +125,18 @@ footer{
 }
 */
 /*MediaQuery*/
+@media(min-width: 624px){
+    
+    #header{
+        min-height: 90px !important;
+    }
+    .navPhone{
+        display: none;
+    }
+    #content{
+        padding-top: 100px !important;
+    }
+}
 @media(max-width: 1228px){
     header .nav{
         width: 75%;
@@ -148,13 +163,14 @@ footer{
     .nav .link{
         display: none;
     }
-    .navPhone{
+    header .navPhone{
         width: 75%;
         height: auto;
         margin: 0px auto;
+        display: block;
         transition: all 300ms;
     }
-    .navPhone .link{
+    .navPhone .linkPhone{
         width: 30%;
         height: 40px;
         flex-grow: 1;
@@ -163,30 +179,20 @@ footer{
         text-align: center;
         list-style: none;
     }
-    .navPhone .link a{
+    .navPhone .linkPhone a{
         display: block;
         text-decoration: none;
         font-style: normal;
         color: white;
     }
+    header .navPhone li{
+        display: block;
+    }
     #logo{
         order: 1;
         display: block;
     }
-    .about-me{
-    /* .link para que funcione
-        display: none;
-    */         
-    }
-    .projects{
-    /* order: 3;*/
-    }
-    .create{
-    /* order: 4;*/
-    }
-    .contact{
-    /* order: 5;*/
-    }
+
     #content{
         padding-top: 280px;
     }
