@@ -1,10 +1,17 @@
-<header>
-  <ul class="nav">
-    <li><a class="link about-me" [routerLink]="['./about']" [routerLinkActive]="['actived']">About me</a></li>
-    <li><a class="link projects" [routerLink]="['./projects']" [routerLinkActive]="['actived']">Projects</a></li>
-    <li id="logo" ><a href="#">AM</a></li>
-    <li><a class="link create" [routerLink]="['./create']" [routerLinkActive]="['actived']">Create</a></li>
-    <li><a class="link contact" [routerLink]="['./contact']" [routerLinkActive]="['actived']">Contact</a></li>
+<header id="header">
+  <!--<script src="../assets/functions.js" type="text/javascript"></script>-->
+    <ul class="nav">
+    <li class="link"><a class="about-me" [routerLink]="['./about']" [routerLinkActive]="['actived']">About me</a></li>
+    <li class="link"><a class="projects" [routerLink]="['./projects']" [routerLinkActive]="['actived']">Projects</a></li>
+    <li id="logo" ><a href="javascript:void(0);" (click)="myFunction();">AM</a></li>
+    <li class="link"><a class="create" [routerLink]="['./create']" [routerLinkActive]="['actived']">Create</a></li>
+    <li class="link"><a class="contact" [routerLink]="['./contact']" [routerLinkActive]="['actived']">Contact</a></li>
+  </ul>
+  <ul id="nav-phone" class="navPhone" style="display: block;">
+    <li class="link"><a class="about-me" [routerLink]="['./about']" [routerLinkActive]="['actived']">About me</a></li>
+    <li class="link"><a class="projects" [routerLink]="['./projects']" [routerLinkActive]="['actived']">Projects</a></li>
+    <li class="link"><a class="create" [routerLink]="['./create']" [routerLinkActive]="['actived']">Create</a></li>
+    <li class="link"><a class="contact" [routerLink]="['./contact']" [routerLinkActive]="['actived']">Contact</a></li>
   </ul>
   <span class="clearfix"></span>
 </header>
