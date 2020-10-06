@@ -134,7 +134,7 @@ footer{
         display: none;
     }
     #content{
-        padding-top: 100px !important;
+        padding-top: 90px !important;
     }
 }
 @media(max-width: 1228px){
@@ -164,7 +164,7 @@ footer{
         display: none;
     }
     header .navPhone{
-        width: 75%;
+        width: 100%;
         height: auto;
         margin: 0px auto;
         display: block;
@@ -197,88 +197,3 @@ footer{
         padding-top: 280px;
     }
 }
-/*
-@media(min-width: 525px){
-    header .nav{
-        width: 80%;
-        padding-left: 9%;
-    }
-}
-@media(min-width: 625px){
-    header .nav{
-        width: 73%;
-        padding-left: 9%;
-    }
-}
-@media(min-width: 725px){
-    header .nav{
-        width: 60%;
-        padding-left: 5%;
-    }
-}
-@media(min-width: 845px){
-    header .nav{
-        width: 55%;
-        padding-left: 9%;
-    }
-}
-@media(min-width: 946px){
-    header .nav{
-        width: 46%;
-        padding-left: 9%;
-    }
-}
-@media(min-width: 1200px){
-    header .nav{
-        width: 40%;
-        padding-left: 9%;
-    }
-}
-@media(min-width: 1366px){
-    header .nav{
-        width: 33%;
-        padding-left: 0%;
-    }
-}
-@media(min-width: 1367px) and (max-width: 1920px){
-    header .nav{
-        width: 23%;
-    }
-}
-*/
-/*
-@media(min-width: 1880px){
-    header .nav{
-        width: 33%;
-    }
-}
-@media(min-width: 1327px) and (max-width: 1879px){
-    header .nav{
-        width: 33%;
-    }
-}
-@media(min-width: 1201px) and (max-width: 1326px){
-    header .nav{
-        width: 44%;
-        padding-left: 10%;
-    }
-}
-@media(min-width: 871px) and (max-width: 1200px){
-    header .nav{
-        width: 50%;
-        padding-left: 7%;
-    }
-}
-@media(max-width: 870px) and (min-width: 753px){
-    header .nav{
-        width: 50%;
-        font-size: 15px;
-        margin: 0px auto;
-    }
-}
-@media(min-width: 414px) and (max-width: 752px){
-    header .nav{
-        width: 26%;
-    }
-}
-*/
