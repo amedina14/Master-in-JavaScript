@@ -1,6 +1,51 @@
-h1{
-    font-family: 'finger';
-    font-size: 40px;
-    width: 75%;
+#title{
+    width: 70%;
     margin: 0px auto;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+#title h1{
+    font-family: 'finger';
+    font-size: 50px;
+    width: 80%;
+    margin: 0px auto;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0px 0px 0px slategrey;
+}
+
+#title h2{
+    font-size: 25px;
+    color: gray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+article.about{
+    width: 80%;
+    margin: 0px auto;
+    /*padding-bottom: 20px;*/
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+
+.about h2{
+    box-shadow: 0px 0px 0px slategrey;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+
+.about p{
+    padding-top: 15px;
+    padding-bottom: 30px;
+    text-align: justify;
+}
+
+@media(max-width: 475px){
+    #title h1{
+        width: 100%;
+        font-size: 40px;
+    }
 }
