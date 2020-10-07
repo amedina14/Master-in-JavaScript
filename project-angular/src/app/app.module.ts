@@ -22,6 +22,8 @@ import { ErrorComponent } from './components/error/error.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
     routing
   ],
   providers: [appRoutingProviders],

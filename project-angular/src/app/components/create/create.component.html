@@ -1,1 +1,38 @@
-<p>create works!</p>
+<div class="container">
+    <h2>{{title}}</h2>
+    <!-- 
+        - Declara el formulario de angular de tipo ngForm.
+        - Recive los datos del formulario como parametro y los elabora con el metodo submit
+        - Despues de recibirlos, resetea el form.
+    -->
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+    <!--
+        Recoge de la instancia del objeto, en el componente, la propiedad name y la modifica.
+    -->
+    <p>
+        <label for="name">Name</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name"/>
+    </p>
+    <p>
+        <label for="description">Description</label>
+        <textarea name="description" #description="ngModel" [(ngModel)]="project.description"></textarea>
+    </p>
+    <p>
+        <label for="category">Category</label>
+        <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category"/>
+    </p>
+    <p>
+        <label for="year">Production year</label>
+        <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year"/>
+    </p>
+    <p>
+        <label for="langs">Languages</label>
+        <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs"/>
+    </p>
+    <p>
+        <label for="image">Project image</label>
+        <input type="file" name="image" placeholder="Upload image"/>
+    </p>
+    <input type="submit" value="Send">
+    </form>
+</div>
