@@ -8,18 +8,26 @@
     <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
     <!--
         Recoge de la instancia del objeto, en el componente, la propiedad name y la modifica.
+        Para validar un capo hay que ponerle el atributo required para luego hacer la condicion
+        de validacion con *ngIf.
     -->
     <p>
         <label for="name">Name</label>
-        <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name"/>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name"
+        required/>
+        <span class="form_error" *ngIf="name.touched && !name.valid">The name entered is invalid</span>
     </p>
     <p>
-        <label for="description">Description</label>
-        <textarea name="description" #description="ngModel" [(ngModel)]="project.description"></textarea>
+        <label for="description">Description</label><span class="desc-flex">
+        <textarea name="description" #description="ngModel" [(ngModel)]="project.description"
+        required></textarea>
+        <span class="form_error description" *ngIf="description.touched && !description.valid">The description entered is invalid</span></span>
     </p>
     <p>
         <label for="category">Category</label>
-        <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category"/>
+        <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category"
+        required/>
+        <span class="form_error" *ngIf="category.touched && !category.valid">The category is required</span>
     </p>
     <p>
         <label for="year">Production year</label>
@@ -27,12 +35,14 @@
     </p>
     <p>
         <label for="langs">Languages</label>
-        <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs"/>
+        <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs"
+        required/>
+        <span class="form_error" *ngIf="langs.touched && !langs.valid">The langs are required</span>
     </p>
     <p>
         <label for="image">Project image</label>
         <input type="file" name="image" placeholder="Upload image"/>
     </p>
-    <input type="submit" value="Send">
+    <input type="submit" value="Send" [disabled]="!projectForm.form.valid"/>
     </form>
 </div>
