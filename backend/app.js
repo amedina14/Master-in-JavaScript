@@ -24,12 +24,12 @@ app.use(bodyParser.json());
  * Permite acceso de un dominio/origen a otro. Compatibilidades con frontend.
  */
 app.use((req,res,next) => {
-    const allowedOrigins = ['http://localhost:3700','http://127.0.0.1:3700'];
+    const allowedOrigins = ['http://localhost:3700','http://127.0.0.1:3700','http://localhost:4200'];
     const origin = req.headers.origin;
     if(allowedOrigins.includes(origin)){
         res.setHeader('Access-Control-Allow-Origin', origin);
     }
-    //res.header('Access-Control-Allow-Origin:','*');
+    //res.header('Access-Control-Allow-Origin:','http://localhost:3700');
     res.header('Access-Control-Allow-Headers','Authorization,X-API-KEY,Origin,X-Requested-With,Content-Type,Accept,Access-Control-Allow-Request-Method');
     res.header('Access-Control-Allow-Methods','GET,POST,OPTIONS,PUT,DELETE');
     res.header('Allow','GET,POST,OPTIONS,PUT,DELETE');
