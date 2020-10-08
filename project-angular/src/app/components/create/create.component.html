@@ -1,5 +1,15 @@
 <div class="container">
     <h2>{{title}}</h2>
+
+    <!-- Status true *ngIf="status == 'success'" *ngIf="status == 'failed'"-->
+    <div class="message success" *ngIf="status == 'success'">
+        Project has been saved successfully. You can see it <a href="#">here</a>.
+    </div>
+    <!-- Status false -->
+    <div class="message failed" *ngIf="status == 'failed'">
+        Project has not been saved successfully.
+    </div>
+
     <!-- 
         - Declara el formulario de angular de tipo ngForm.
         - Recive los datos del formulario como parametro y los elabora con el metodo submit
