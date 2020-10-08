@@ -73,6 +73,23 @@ form span .form_error{
     display: flex;
     align-items: center;
 }
+.message{
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+.message.success{
+    background-color: darkseagreen;
+    color: white;
+}
+.message.failed{
+    background-color: indianred;
+    color: white;
+}
+.success a{
+    color: white;
+}
 
 @media(max-width: 730px){
     .container form{
