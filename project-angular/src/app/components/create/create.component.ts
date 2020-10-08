@@ -12,6 +12,7 @@ export class CreateComponent implements OnInit {
 
   public title: String;
   public project: Project;
+  public status: String;
 
   /**
    * Dentro de los parametros del constructor se crean las propiedades del servicio
@@ -28,11 +29,27 @@ export class CreateComponent implements OnInit {
   }
 
   /**
-   * Llena el objeto proyecto con los datos.
+   * Llena el objeto proyecto con los datos del form.
+   * 
+   * Se usa metodo subscribe que contiene funcon de callback
+   * para guardar las peticones como resultado.
+   * 
    * @param form Datos del formulrio.
    */
   onSubmit(form){
-    console.log(this.project);
+    this._projectService.saveProject(this.project).subscribe(
+      response => {
+        if(response.project){
+          this.status = 'success';
+          form.reset();
+        } else {
+          this.status = 'failed';
+        }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
   }
 
 }
