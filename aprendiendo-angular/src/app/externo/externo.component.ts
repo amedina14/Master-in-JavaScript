@@ -57,7 +57,10 @@ export class ExternoComponent implements OnInit {
    * Invoco el metodo addUser(form),
    * reseteo form.reset().
    * registro data con subscribe:
-   * dos fx de callback(resulatdo y error){} 
+   * new user seria la BD donde se registra
+   * dos fx de callback(resulatdo y error){}
+   * en response, asigno la respusta
+   * (datos de name y job) a usuario_guardado.  
    * @param form 
    */
   onSubmit(form){
