@@ -109,6 +109,116 @@ header a:hover, .actived{
     padding-top: 120px;
 }
 
+/* Form Create project */
+.container{
+    margin: 50px;
+    padding-top: 10px;
+}
+
+.container h2{
+    display: block;
+    font-size: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.container form{
+    width: 80%;
+}
+
+.container form p{
+    width: 100%;
+}
+
+form label{
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+form textarea,
+form input[type="text"],
+form input[type="number"]
+{
+    width: 45%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+form button,
+form input[type="submit"]
+{
+    display: block;
+    font-size: 17px;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: rgba(22, 140, 230, 1);
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #555;
+    cursor: pointer;
+}
+form button:hover,
+form input[type="submit"]:hover{
+    background-color: rgba(22, 140, 230, 0.8);
+    border: 1px solid rgba(13, 67, 138, 0.8);
+}
+form input[disabled]{
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+form span .form_error{
+    font-size: medium;
+    margin-left: 5px;
+}
+.form_error{
+    color: indianred;
+}
+.desc-flex{
+    display: flex;
+}
+.form_error.description{
+    display: flex;
+    align-items: center;
+}
+.message{
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+.message.success{
+    background-color: darkseagreen;
+    color: white;
+}
+.message.failed{
+    background-color: indianred;
+    color: white;
+}
+.success a{
+    color: white;
+}
+
+@media(max-width: 730px){
+    .container form{
+        width: 80%;
+    }
+    form textarea,
+    form input[type="text"],
+    form input[type="number"]
+    {
+        width: 80%;
+    }
+    .form_error{
+        display: block;
+        font-size: medium;
+    }
+}
+
 /* Footer */
 footer{
     width: 75%;
@@ -119,12 +229,7 @@ footer{
 }
 
 
-/*
-.nav .about-me{
-    width: 15%;
-}
-*/
-/*MediaQuery*/
+/* MediaQuery Header e logo */
 @media(min-width: 624px){
     
     #header{
