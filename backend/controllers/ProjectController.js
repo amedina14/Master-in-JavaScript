@@ -12,7 +12,7 @@ const Project = require('../models/project');
 // Import lib (file system) para borrar img de ./uploads
 const fs = require('fs');
 
-// libreria del file system de archivos
+// Modulo/libreria de Nodejs que exporta el path del file system
 const path = require('path'); 
 
 const controller = {
@@ -206,6 +206,22 @@ const controller = {
                 message: fileName
             });
         }
+    },
+    getImageFile(req, res){
+        // El nombre del schema propiedad, se usa en el parametro de la ruta /get-image. 
+        let file = req.params.image;
+        // Entrar a la carpeta de imagenes del DB
+        let path_file = './uploads/'+file;
+
+        fs.stat(path_file, (error)=>{
+            // Si no hay ningun error muestra
+            if(!error){
+                return res.sendFile(path.resolve(path_file));
+            } else {
+                return res.status(200).send({message: "Image not found."});
+            }
+        });
+
     }
 };
 
