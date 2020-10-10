@@ -70,7 +70,7 @@ export class CreateComponent implements OnInit {
   /**
    * Captura todos los datos relativos al file.
    * 
-   * @param fileInput file cargado
+   * @param fileInput file cargado desde la vista.
    */
   fileChangeEvent(fileInput: any) {
     /**
