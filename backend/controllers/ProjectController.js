@@ -12,6 +12,9 @@ const Project = require('../models/project');
 // Import lib (file system) para borrar img de ./uploads
 const fs = require('fs');
 
+// libreria del file system de archivos
+const path = require('path'); 
+
 const controller = {
 
     home: function(req, res){
@@ -27,6 +30,10 @@ const controller = {
     saveProject: function(req,res){
         const project = new Project();
         
+        /**
+         * Agarra las propiedades del modelo/schema proyecto 
+         * y en esta clase controlador las usa como params.
+        */
         const params = req.body;
         project.name = params.name;
         project.description = params.description;
@@ -143,6 +150,10 @@ const controller = {
      * Metodo per caricare immagini
      */
     uploadImage: (req, res) => {
+        /**
+         * El params.id se refiere a las propiedades del schema proyecto.
+         * Seran usadas como parametros de la api en la url
+         */
         const projectId = req.params.id;
         const fileName = 'Imagen no subida...';
 
