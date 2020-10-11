@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from 'src/models/project';
-import { UploadService } from 'src/services/upload.service';
 import { ProjectService } from '../../../services/project.service';
+import { UploadService } from 'src/services/upload.service';
 import { Global } from '../../../services/global';
 
 @Component({
@@ -15,6 +15,7 @@ export class CreateComponent implements OnInit {
   public title: String;
   public project: Project;
   public status: String;
+  public status_img: boolean;
   public filesToUpload: Array<File>;
 
   /**
@@ -26,6 +27,7 @@ export class CreateComponent implements OnInit {
     private _uploadService: UploadService
   ) {
     this.title = "Aggiungere nuovo progetto";
+    this.status_img = false;
     this.project = new Project('', '', '', '', 2020, '', '');
   }
 
@@ -80,6 +82,7 @@ export class CreateComponent implements OnInit {
      * Ya tengo en la propiedad los datos que quiero subir.
      */
     this.filesToUpload = <Array<File>>fileInput.target.files;
+    this.status_img = true;
   }
 
 }

@@ -178,7 +178,7 @@ const controller = {
             const extFile = extensionSplit[1];
 
             
-            if(extFile == 'png' || extFile == 'jpg' || extFile == 'jpeg' || extFile== 'gif'){
+            if(extFile == 'png' || extFile == 'PNG' || extFile == 'jpg' || extFile == 'jpeg' || extFile== 'gif'){
 
                 Project.findByIdAndUpdate(projectId, {image: fileName}, {new: true}, (err, projectUpdated) => {
                                         

@@ -51,7 +51,9 @@
     </p>
     <p>
         <label for="image">Project image</label>
-        <input type="file" name="image" placeholder="Upload image" (change)="fileChangeEvent($event)"/>
+        <input type="file" name="image" placeholder="Upload image" (change)="fileChangeEvent($event)"
+        required/>
+        <span class="form_error" *ngIf="status_img == false">The image are required</span>
     </p>
     <input type="submit" value="Send" [disabled]="!projectForm.form.valid"/>
     </form>

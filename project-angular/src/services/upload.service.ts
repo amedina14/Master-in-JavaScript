@@ -30,7 +30,7 @@ export class UploadService {
      * El tipo variable del parametro url debe ser "string" con s minuscola
      * para que no de error en el metodo open(). 
      */
-    makeFileRequest(url: string, params: Array<String>, files: Array<any>, name: String) {
+    makeFileRequest(url: string, params: Array<string>, files: Array<File>, name: string) {
 
         /**
          * Crear Promise para peticion asincrona.
