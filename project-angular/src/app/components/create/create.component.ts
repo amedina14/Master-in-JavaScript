@@ -44,29 +44,33 @@ export class CreateComponent implements OnInit {
    */
   onSubmit(form) {
 
-    // Guardar los datos
-    this._projectService.saveProject(this.project).subscribe(
-      response => {
-        if (response.project) {
+    // response.project.image != ''
+    if (this.project.image !== null || this.project.image !== '') {
+      // Guardar los datos
+      this._projectService.saveProject(this.project).subscribe(
+        response => {
+          if (response.project) {
 
-          // Subir la imagen
-          this._uploadService.makeFileRequest(Global.url + 'uploadImage/' + response.project._id, [], this.filesToUpload, 'image')
-            .then((result: any) => {
+            // Subir la imagen
+            this._uploadService.makeFileRequest(Global.url + 'uploadImage/' + response.project._id, [], this.filesToUpload, 'image')
+              .then((result: any) => {
 
-              console.log(result);
+                console.log(result);
 
-              this.status = 'success';
-              form.reset();
-            });
+                this.status = 'success';
+                form.reset();
+              });
 
-        } else {
-          this.status = 'failed';
+          } else {
+            this.status = 'failed';
+          }
+        },
+        error => {
+          console.log(<any>error);
         }
-      },
-      error => {
-        console.log(<any>error);
-      }
-    );
+      );
+    }
+
   }
 
   /**
@@ -81,8 +85,13 @@ export class CreateComponent implements OnInit {
      * Convierto obligatoriamente los datos a un array.
      * Ya tengo en la propiedad los datos que quiero subir.
      */
-    this.filesToUpload = <Array<File>>fileInput.target.files;
-    this.status_img = true;
+    if(fileInput !== null){
+
+      this.filesToUpload = <Array<File>>fileInput.target.files;
+      this.status_img = true;
+    } else {
+      console.log("imagen vacia");
+    }
   }
 
 }
