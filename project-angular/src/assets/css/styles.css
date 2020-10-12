@@ -172,12 +172,14 @@ form input[disabled]{
     opacity: 0.4;
     cursor: not-allowed;
 }
-form span .form_error{
+/*form span .form_error{
     font-size: medium;
     margin-left: 5px;
-}
+}*/
 .form_error{
+    font-size: medium;
     color: indianred;
+    margin-left: 5px;
 }
 .desc-flex{
     display: flex;
