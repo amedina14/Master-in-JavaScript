@@ -3,11 +3,17 @@
 
     <ul>
         <li *ngFor="let project of projects" class="project">
-            <div class="image">
-                <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image"/><!-- *ngIf="project.image" -->
-            </div>
-            <h3>{{project.name}}</h3>
-            <p>{{project.category}}</p>
+            <!-- 
+                'project' significa la ruta declarada en el app.routing.ts 
+                'project._id' es el campo del modelo de angular (entidad).
+            -->
+            <a [routerLink] = "['/project', project._id]">
+                <div class="image">
+                    <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image"/><!-- *ngIf="project.image" -->
+                </div>
+                <h3>{{project.name}}</h3>
+                <p>{{project.category}}</p>
+            </a>
         </li>
     </ul>
 </div>
