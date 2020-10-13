@@ -9,6 +9,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CreateComponent } from './components/create/create.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ErrorComponent } from './components/error/error.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 // Creacion y definicion de rutas.
 const appRoutes: Routes = [
@@ -26,6 +27,9 @@ const appRoutes: Routes = [
     },
     {
         path: 'contact', component: ContactComponent
+    },
+    {
+        path: 'project/:id', component: DetailComponent
     },
     {
         path: '**', component: ErrorComponent
