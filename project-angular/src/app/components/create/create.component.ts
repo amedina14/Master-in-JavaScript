@@ -14,6 +14,7 @@ export class CreateComponent implements OnInit {
 
   public title: String;
   public project: Project;
+  public save_project;
   public status: String;
   public status_img: boolean;
   public filesToUpload: Array<File>;
@@ -40,7 +41,7 @@ export class CreateComponent implements OnInit {
    * Se usa metodo subscribe que contiene funcon de callback
    * para guardar las peticones como resultado.
    * 
-   * @param form Datos del formulrio.
+   * @param form Datos del formulario.
    */
   onSubmit(form) {
 
@@ -55,6 +56,7 @@ export class CreateComponent implements OnInit {
             this._uploadService.makeFileRequest(Global.url + 'uploadImage/' + response.project._id, [], this.filesToUpload, 'image')
               .then((result: any) => {
 
+                this.save_project = result.project;
                 console.log(result);
 
                 this.status = 'success';
@@ -85,7 +87,7 @@ export class CreateComponent implements OnInit {
      * Convierto obligatoriamente los datos a un array.
      * Ya tengo en la propiedad los datos que quiero subir.
      */
-    if(fileInput !== null){
+    if (fileInput !== null) {
 
       this.filesToUpload = <Array<File>>fileInput.target.files;
       this.status_img = true;
