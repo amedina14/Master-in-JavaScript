@@ -3,7 +3,7 @@
 
     <!-- Status true *ngIf="status == 'success'" *ngIf="status == 'failed'"-->
     <div class="message success" *ngIf="status == 'success'">
-        Project has been saved successfully. You can see it <a href="#">here</a>.
+        Project has been saved successfully. You can see it <a [routerLink]="['/project', save_project._id]">here</a>.
     </div>
     <!-- Status false -->
     <div class="message failed" *ngIf="status == 'failed'">
