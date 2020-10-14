@@ -10,6 +10,7 @@ import { CreateComponent } from './components/create/create.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { EditComponent } from './edit/edit.component';
 
 // Creacion y definicion de rutas.
 const appRoutes: Routes = [
@@ -30,6 +31,9 @@ const appRoutes: Routes = [
     },
     {
         path: 'project/:id', component: DetailComponent
+    },
+    {
+        path: 'edit-project/:id', component: EditComponent
     },
     {
         path: '**', component: ErrorComponent
