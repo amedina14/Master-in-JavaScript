@@ -1,3 +1,17 @@
-<h1>{{project._id}}</h1>
-<h1>{{project.name}}</h1>
-<h1>{{project.category}}</h1>
+<div class="container">
+    <div class="image">
+        <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image" />
+    </div>
+    <div class="data">
+        <h1>{{project.name}}</h1>
+        <h2>{{project.description}}</h2>
+        <p>ID: {{project._id}}</p>
+        <p>Category: {{project.category}}</p>
+        <p>Languages: {{project.langs}}</p>
+        <p>Year of production: {{project.year}}</p>
+        <p>
+            <a href="#" class="button-edit">Edit</a>
+            <a href="#" class="button-delete">Delete</a>
+        </p>
+    </div>
+</div>
