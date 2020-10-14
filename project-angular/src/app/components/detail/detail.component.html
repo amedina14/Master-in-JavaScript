@@ -10,7 +10,7 @@
         <p>Languages: {{project.langs}}</p>
         <p>Year of production: {{project.year}}</p>
         <p>
-            <a class="button-edit">Edit</a>
+            <a [routerLink]="['/edit-project', project._id]" class="button-edit">Edit</a>
             <a (click)="deleteProject(project._id)" class="button-delete">Delete</a>
         </p>
     </div>
