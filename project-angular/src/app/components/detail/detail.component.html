@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="project">
     <div class="image">
         <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image" />
     </div>
@@ -10,8 +10,8 @@
         <p>Languages: {{project.langs}}</p>
         <p>Year of production: {{project.year}}</p>
         <p>
-            <a href="#" class="button-edit">Edit</a>
-            <a href="#" class="button-delete">Delete</a>
+            <a class="button-edit">Edit</a>
+            <a (click)="deleteProject(project._id)" class="button-delete">Delete</a>
         </p>
     </div>
 </div>
