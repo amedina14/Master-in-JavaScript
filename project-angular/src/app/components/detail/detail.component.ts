@@ -22,13 +22,14 @@ export class DetailComponent implements OnInit {
     private _route: ActivatedRoute
   ) {
     this.url = Global.url;
-   }
+  }
 
   /**
-   * 1. Recibir los parametros de la url.
-   * 2. Pasarlos al metodo local.
+   * 1. Recibir los parametros de la url con _route
+   * 2. .params.subscribe almacena el parametro en una variable id con fx callback
+   * 3. Pasarlos al metodo local.
    */
-  ngOnInit(){
+  ngOnInit() {
     this._route.params.subscribe(params => {
       let id = params.id;
 
@@ -39,7 +40,7 @@ export class DetailComponent implements OnInit {
   /**
    * Invoco el metodo del servicio y hago peticion al backend.
    */
-  getDetail(id){
+  getDetail(id) {
     this._projectService.getDetail(id).subscribe(
       response => {
         this.project = response.project;
@@ -48,6 +49,26 @@ export class DetailComponent implements OnInit {
         console.log(<any>error);
       }
     );
+  }
+
+  /**
+   * Invoco el metodo del servicio deleteProject y hago peticion al backend.
+   */
+  deleteProject(id) {
+    this._projectService.deleteProject(id).subscribe(
+      response => {
+        if (response.project) {
+          this._router.navigate(['/projects']);
+        }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
+  }
+
+  cons(){
+    console.log("Hola");
   }
 
 }
