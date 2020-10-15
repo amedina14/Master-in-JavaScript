@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="project">
     <h2>{{title}}</h2>
 
     <!-- Status true *ngIf="status == 'success'" *ngIf="status == 'failed'"-->
@@ -49,6 +49,9 @@
         </p>
         <p>
             <label for="image">Project image</label>
+            <span class="image" *ngIf="project.image" style="float: none;">
+                <img src="{{url+'get-image/'+project.image}}" style="width: 100px;"/>
+            </span><br>
             <input type="file" name="image" required placeholder="Upload image" (change)="fileChangeEvent($event)"/>
             <span *ngIf="status_img == false">The image is required</span>
             <!--
