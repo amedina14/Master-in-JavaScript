@@ -60,4 +60,15 @@ export class ProjectService{
         return this._http.delete(this.url+'delete/'+id, {headers: headers});
     }
 
+    /**
+     * Para modificar tengo que pasarle el objeto/proyecto entero.
+     */
+    updateProject(project): Observable<any>{
+        let params = JSON.stringify(project);
+        let headers = new HttpHeaders().set('Content-Type','application/json');
+
+        // Nombre de la ruta en el backend
+        return this._http.put(this.url+'update/'+project._id, params, {headers: headers});
+    }
+
 }
