@@ -1,1 +1,60 @@
-<p>edit works!</p>
+<div class="container" *ngIf="project">
+    <h2>{{title}}</h2>
+
+    <!-- Status true *ngIf="status == 'success'" *ngIf="status == 'failed'"-->
+    <div class="message success" *ngIf="status == 'success'">
+        Project has been saved successfully. You can see it <a [routerLink]="['/project', save_project._id]">here</a>.
+    </div>
+    <!-- Status false -->
+    <div class="message failed" *ngIf="status == 'failed'">
+        Project has not been saved successfully.
+    </div>
+
+    <!-- 
+        - Declara el formulario de angular de tipo ngForm.
+        - Recive los datos del formulario como parametro y los elabora con el metodo submit
+        - Despues de recibirlos, resetea el form.
+    -->
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <!--
+        Recoge de la instancia del objeto, en el componente, la propiedad name y la modifica.
+        Para validar un capo hay que ponerle el atributo required para luego hacer la condicion
+        de validacion con *ngIf.
+    -->
+        <p>
+            <label for="name">Name</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required />
+            <span class="form_error" *ngIf="name.touched && !name.valid">The name entered is invalid</span>
+        </p>
+        <p>
+            <label for="description">Description</label><span class="desc-flex">
+                <textarea name="description" #description="ngModel" [(ngModel)]="project.description"
+                    required></textarea>
+                <span class="form_error description" *ngIf="description.touched && !description.valid">The description
+                    entered is invalid</span></span>
+        </p>
+        <p>
+            <label for="category">Category</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required />
+            <span class="form_error" *ngIf="category.touched && !category.valid">The category is required</span>
+        </p>
+        <p>
+            <label for="year">Production year</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" />
+        </p>
+        <p>
+            <label for="langs">Languages</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required />
+            <span class="form_error" *ngIf="langs.touched && !langs.valid">The langs are required</span>
+        </p>
+        <p>
+            <label for="image">Project image</label>
+            <span class="image" *ngIf="project.image" style="float: none;">
+                <img src="{{url+'get-image/'+project.image}}" style="width: 100px;"/>
+            </span><br>
+            <input type="file" name="image" required placeholder="Upload image" (change)="fileChangeEvent($event)"/>
+            <span *ngIf="status_img == false">The image is required</span>
+        </p>
+        <input type="submit" value="Send" [disabled]="!projectForm.form.valid || status_img == false" />
+    </form>
+</div>
