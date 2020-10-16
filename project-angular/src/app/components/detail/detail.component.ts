@@ -15,6 +15,7 @@ export class DetailComponent implements OnInit {
 
   public url: string;
   public project: Project;
+  public confirm: boolean;
 
   constructor(
     private _projectService: ProjectService,
@@ -22,6 +23,7 @@ export class DetailComponent implements OnInit {
     private _route: ActivatedRoute
   ) {
     this.url = Global.url;
+    this.confirm = false;
   }
 
   /**
@@ -51,24 +53,24 @@ export class DetailComponent implements OnInit {
     );
   }
 
+  setConfirm(confirm){
+    this.confirm = confirm;
+  }
+
   /**
    * Invoco el metodo del servicio deleteProject y hago peticion al backend.
-   */
+   */ 
   deleteProject(id) {
     this._projectService.deleteProject(id).subscribe(
       response => {
         if (response.project) {
           this._router.navigate(['/projects']);
-        }
-      },
+        }  
+      },  
       error => {
         console.log(<any>error);
-      }
-    );
-  }
-
-  cons(){
-    console.log("Hola");
-  }
+      }  
+    );  
+  }  
 
 }
