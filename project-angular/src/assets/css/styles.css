@@ -241,7 +241,12 @@ form input[disabled]{
 .success a{
     color: white;
 }
-
+.confirmar{
+    display: block;
+    font-weight: bold;
+    margin: 2%;
+    margin-top: 3%;
+}
 @media(max-width: 730px){
     .container form{
         width: 80%;
@@ -379,9 +384,9 @@ footer{
         margin: 0px auto;
         margin-bottom: 30px;
     }
-    .project .image{
-        /*height: 100%;*/
-    }
+    /*.project .image{
+        height: 100%;
+    }*/
     .container .data{
         float: left;
         width: 100%;
@@ -390,9 +395,20 @@ footer{
     .container .image{
         width: 100%;
     }
+    .container .data h1{
+        text-align: center;
+    }
+    .container .data h2{
+        text-align: justify;
+        font-weight: lighter;
+    }
     .button-edit,
     .button-delete{
         width: 33%;
+        margin-top: 10%;
+    }
+    .confirmar{
+        margin-top: 10%;
     }
 
 }
