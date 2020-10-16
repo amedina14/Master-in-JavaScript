@@ -9,9 +9,14 @@
         <p>Category: {{project.category}}</p>
         <p>Languages: {{project.langs}}</p>
         <p>Year of production: {{project.year}}</p>
-        <p>
+        <p *ngIf="confirm == false">
             <a [routerLink]="['/edit-project', project._id]" class="button-edit">Edit</a>
-            <a (click)="deleteProject(project._id)" class="button-delete">Delete</a>
+            <a (click)="setConfirm(true)" class="button-delete">Delete</a>
+        </p>
+        <p *ngIf="confirm == true">
+            <span class="confirmar">Are you sure you want to delete permanently?</span>
+            <a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
+            <a (click)="deleteProject(project._id)" class="button-delete">Confirm Delete</a>
         </p>
     </div>
 </div>
