@@ -39,6 +39,7 @@ header{
     background-color: rgba(53, 103, 164, 0.8);
     position: fixed;
     text-transform: uppercase;
+    z-index: 99999; /* header davanti ai bottoni dello slider */
 }
 
 header .nav{
@@ -306,6 +307,27 @@ footer{
     color: rgba(0, 0, 0, 0.5);
 }
 
+/* Slider */
+.bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    outline: 0;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    z-index: 0; /* slider dietro il header */
+}
+.galeria img{
+    width: 100%;
+    height: 100%;
+    /*
+    min-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    */
+}
 
 /* MediaQuery Header e logo */
 @media(min-width: 624px){
