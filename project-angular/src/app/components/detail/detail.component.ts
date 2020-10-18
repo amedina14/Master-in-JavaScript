@@ -4,6 +4,7 @@ import { Global } from '../../../services/global';
 import { Project } from '../../../models/project';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
+declare var $:any;
 
 @Component({
   selector: 'app-detail',
