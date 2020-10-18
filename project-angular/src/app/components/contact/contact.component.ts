@@ -15,35 +15,40 @@ declare var $:any;
 })
 export class ContactComponent implements OnInit {
 
+  public widthSliderInput: number;
+  public ampiezzaToSlider: number;
+  public caption: boolean;
   //public url: string;
 
   constructor() {
-    //this.url= Global.url;
+    this.ampiezzaToSlider= 1000;
+    this.caption = true;
    }
 
   ngOnInit(): void {
-    
-    /**
-     * Cambia colore con jquery.
-     * bisogna declarare le variabili globali.
-    */ 
-    $("#logo").click(function(e){
-      e.preventDefault();
 
-        $("header").css("background", "rgba(9, 148, 0, 0.8)")
-                 .css("height","90px");
-    });
-    
-    /**
-     * Slider
-     */
-    $('.galeria').bxSlider({
-      mode: 'fade',
-      captions: true,
-      slideWidth: 600
-    })
+  }
 
+  cargarSlider(){
+    //this.ampiezzaToSlider = this.widthSlider;
+    let amp = this.ampiezzaToSlider;
+    //window.location.reload();
+    if(amp != null){
+      console.log("ampiezza piena si svuota");
+      this.ampiezzaToSlider = 0;
+      console.log(this.ampiezzaToSlider);
+      if(this.ampiezzaToSlider == 0){
+        console.log("ampiezza vuota si riempie");
+        this.ampiezzaToSlider = this.widthSliderInput;
+        console.log(this.ampiezzaToSlider);
+      }
+    } else{
+      this.ampiezzaToSlider = this.widthSliderInput;
+    }
+  }
 
+  resetWidth(){
+    this.ampiezzaToSlider = null;
   }
 
   /*
