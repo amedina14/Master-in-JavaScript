@@ -2,26 +2,31 @@
 
     <h1>Contacto</h1>
 
+    <div id="texto" #text>
+        <p>Contattami per qualsiasi dubbio.</p>
+    </div>
+
+    <!-- (keyup.enter)="cargarSlider()" -->
+    <!-- 
+        Flusso 3: (authorEvent)="getAuthor($event)"
+        Ottiene dati del autore, tramite Output.
+    -->
+
     Size width: 
-    <input type="number" [(ngModel)]="widthSliderInput" (keyup.enter)="cargarSlider()"/><!-- (keyup.enter)="cargarSlider()" -->
+    <input type="number" [(ngModel)]="widthSliderInput" (keyup.enter)="cargarSlider()"/>
     <button value="cargar" (click)="cargarSlider()">Upload width</button>
     <button value="reset" (click)="resetWidth()">Reset width</button>
     <div *ngIf="ampiezzaToSlider">
         <slider [ampiezza]="ampiezzaToSlider"
                 [caption]="caption" 
                 (authorEvent)="getAuthor($event)">
-                <!-- 
-                    Flusso 3: (authorEvent)="getAuthor($event)"
-                    Ottiene dati del autore, tramite Output.
-                -->
-
         </slider>
-        
-        <p>Name: {{author.name}}</p>
-        <p>Website: {{author.website}}</p>
-        <p>Social: {{author.social}}</p>
-        <p>E-mail: {{author.email}}</p>
-        
+            
+        <p *ngIf="author">Name: {{author.name}}</p>
+        <p *ngIf="author">Website: {{author.website}}</p>
+        <p *ngIf="author">Social: {{author.social}}</p>
+        <p *ngIf="author">E-mail: {{author.email}}</p>
+            
     </div>
-
+    
 </div>
