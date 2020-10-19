@@ -8,6 +8,19 @@
     <button value="reset" (click)="resetWidth()">Reset width</button>
     <div *ngIf="ampiezzaToSlider">
         <slider [ampiezza]="ampiezzaToSlider"
-                [caption]="caption"></slider>
+                [caption]="caption" 
+                (authorEvent)="getAuthor($event)">
+                <!-- Flusso 3: (authorEvent)="getAuthor($event)"
+                    Ottiene dati del autore.
+                -->
+
+        </slider>
+        
+        <p>Name: {{author.name}}</p>
+        <p>Website: {{author.website}}</p>
+        <p>Social: {{author.social}}</p>
+        <p>E-mail: {{author.email}}</p>
+        
     </div>
+
 </div>
