@@ -18,7 +18,7 @@ export class ContactComponent implements OnInit {
   public widthSliderInput: number;
   public ampiezzaToSlider: number;
   public caption: boolean;
-  //public url: string;
+  public author: any;
 
   constructor() {
     this.ampiezzaToSlider= 1000;
@@ -51,6 +51,16 @@ export class ContactComponent implements OnInit {
     this.ampiezzaToSlider = null;
   }
 
+  /**
+   * Flusso 4
+   * 
+   * @param event 
+   */
+  getAuthor(event){
+    console.log(event);
+    this.author = event;
+  }
+
   /*
   getDetail(id) {
     this._projectService.getDetail(id).subscribe(
@@ -63,8 +73,5 @@ export class ContactComponent implements OnInit {
     );
   }
   */
-
-
-
 
 }
