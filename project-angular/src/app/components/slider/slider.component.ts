@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 declare const $:any;
 
@@ -11,6 +11,13 @@ export class SliderComponent implements OnInit {
 
   @Input() ampiezza: number;
   @Input('caption') didascalia: boolean;
+  /**
+   * Istanza di questo oggetto EventEmitter() che permette di creare nuovi eventi.
+   * Lo passa al metodo locale.
+  */
+  @Output() authorEvent: any = new EventEmitter();
+
+  public author: any;
 
 //  const colors = ['rgba(9, 148, 0, 0.8)','rgba(145, 30, 10, 0.8)','rgba(10, 30, 145, 0.8)']; 
 //  const letters = '0123456789ABCDEF';
@@ -18,22 +25,25 @@ export class SliderComponent implements OnInit {
 
   constructor() {
     this.ampiezza = 0;
+    this.author = {
+      name: "Adrian Medina",
+      website: "arandom.000webhostapp.com",
+      social: ["@adrian.mee","Adrian Medina", "arandom"],
+      email: "medinalarry96@gmail.com"
+    }
    }
 
   ngOnInit(): void {
 
-    //let letters = '0123456789ABCDEF';
-    //let color = '#';
-
     /**
      * Cambia colore con jquery.
-     * bisogna declarare le variabili globali.
     */ 
    $("#logo").click(function(e){
     e.preventDefault();
 
-
-//    function getRandomColor() {
+    /**
+     * Colori random
+     */
     function getRandomColor() {
       let letters = '0123456789ABCDEF';
       let color = '#';
@@ -59,15 +69,16 @@ export class SliderComponent implements OnInit {
 
   }
 
-  /*
-  function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+  /**
+   * Lanciare evento.
+   * Invia l'oggetto al componente padre contact.
+   * Si pouo passare una proprieta json o oggetto.
+   * 
+   * Flusso 2
+   */
+  launch(event){
+    console.log(event);
+    this.authorEvent.emit(this.author);
   }
-  */
 
 }
