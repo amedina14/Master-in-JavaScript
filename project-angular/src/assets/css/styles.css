@@ -115,6 +115,7 @@ header a:hover, .actived{
 .container{
     margin: 50px;
     padding-top: 10px;
+    padding-bottom: 5%;
 }
 .container .image{
     float: left;
@@ -267,6 +268,7 @@ form input[disabled]{
 /* Pagina de Proyectos */
 .container ul{
     width: 80%;
+    min-height: 700px;
     margin: 0px auto;
 }
 
@@ -283,7 +285,7 @@ form input[disabled]{
     float: left;
     width: 25%;
     text-align: center;
-    margin: 0px 20px;
+    margin: 0px 30px;
     margin-bottom: 30px;
 }
 .project img{
