@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 //import { Global } from '../../../services/global';
 
 /**
@@ -19,14 +19,18 @@ export class ContactComponent implements OnInit {
   public ampiezzaToSlider: number;
   public caption: boolean;
   public author: any;
+  
+  @ViewChild('text', {static:true}) text;
 
   constructor() {
     this.ampiezzaToSlider= 1000;
     this.caption = true;
+    //this.text = this.text;
    }
 
   ngOnInit(): void {
-
+    let vecchia_forma = document.querySelector('#texto').innerHTML;
+    console.log(this.text.nativeElement.textContent);
   }
 
   cargarSlider(){
