@@ -13,6 +13,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './edit/edit.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { CustomizableDirective } from './directives/customizable.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SliderComponent } from './components/slider/slider.component';
     ErrorComponent,
     DetailComponent,
     EditComponent,
-    SliderComponent
+    SliderComponent,
+    CustomizableDirective
   ],
   imports: [
     BrowserModule,
