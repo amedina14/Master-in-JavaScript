@@ -36,6 +36,14 @@ app.get('/get', (req, res) => {
 
 })
 
+const messages = [
+    {
+        id: 1,
+        text: "Welcome to the chatroom",
+        nickName: "Adrian Bot"
+    }
+]
+
 /**
  * Conexion al socket
  * Lanzar evento connection para los clientes.
@@ -46,6 +54,8 @@ app.get('/get', (req, res) => {
  */
 io.on('connection', (socket) => {
     console.log("El cliente con IP: "+ socket.handshake.address +" se ha conectado.");
+
+    socket.emit("messages", messages);
 });
 
 /**
