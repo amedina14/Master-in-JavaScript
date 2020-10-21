@@ -1,4 +1,13 @@
-class Coche{
+/**
+ * Interface: Contratos que se indican a la clase que implementa la interfaz,
+ * a usar ciertas propiedades o metodos basicos de forma obligatoria.
+ */
+interface CocheBase{
+    getModelo(): string;
+    getVelocidad(): number;
+}
+
+class Coche implements CocheBase{
     public color: string;
     public modelo: string;
     public velocidad: number;
