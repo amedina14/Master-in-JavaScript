@@ -6,10 +6,40 @@
     <title>Chat socket.io & nodejs</title>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="main.js"></script>
+
+    <style>
+        #messages{
+            max-width: 400px;
+            width: 95%;
+            height: 350px;
+            overflow-y: scroll;
+            border: 1px solid #eee;
+            box-shadow: 0px 0px 20px #ccc inset;
+        }
+        .message{
+            margin:20px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background: white;
+        }
+        form{
+            display: inline-block;
+            width: 400px;
+            height: 42px;
+        }
+    </style>
 </head>
 <body>
     <h1>Chat socket.io & nodejs</h1>
     <div id="messages"></div>
     
+    <form onsubmit="return addMessage(this);">
+        <input type="text" id="nickname" placeholder="Nickname" style="display:block; width: 130px; float:left; height: 15px; margin: 10px 0px;"/>
+        <textarea id="text" placeholder="message.." style="display: block; height: 87%; float: left; width: 50%;"></textarea>
+        <input type="submit" style="height: 100%;"/>
+    </form>
+
+    <div class="clearfix" style="float: none; clear: both;"></div>
 </body>
 </html>
