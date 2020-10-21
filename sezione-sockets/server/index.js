@@ -55,7 +55,22 @@ const messages = [
 io.on('connection', (socket) => {
     console.log("El cliente con IP: "+ socket.handshake.address +" se ha conectado.");
 
+    /**
+     * Envia msj al cliente.
+     */
     socket.emit("messages", messages);
+
+    /**
+     * Recibe msg del cliente 
+     * y guarda en array.
+     * Emite msjs actualizados a todos los clientes conectados.
+     */
+    socket.on('add-message', (data) => {
+        messages.push(data);
+
+        // Emite msjs a todos los clientes conectados.
+        io.sockets.emit('messages', messages);
+    });
 });
 
 /**
