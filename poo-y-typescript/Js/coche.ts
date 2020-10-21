@@ -3,10 +3,15 @@ class Coche{
     public modelo: string;
     public velocidad: number;
 
-    constructor(){
-        this.color = "";
-        this.modelo = "";
+    constructor(modelo:any = null){
+        this.color = "White";
         this.velocidad = 0;
+
+        if(this.modelo = null){
+            this.modelo = "Generico";
+        } else {
+            this.modelo = modelo;
+        }
     }
 
     public getColor(){
@@ -15,6 +20,14 @@ class Coche{
 
     public setColor(color: string){
         this.color = color;
+    }
+
+    public getModelo(){
+        return this.modelo;
+    }
+
+    public setModelo(modelo: string){
+        this.color = modelo;
     }
 
     public acelerar(){
@@ -31,7 +44,7 @@ class Coche{
     }
 }
 
-var coche = new Coche();
+var coche = new Coche("Alfa Mito");
 var coche_dos = new Coche();
 var coche_tres = new Coche();
 
@@ -43,12 +56,13 @@ console.log("El color de coche 1 es: "+ coche.getColor());
 console.log("El color de coche 2 es: "+ coche_dos.getColor());
 console.log("El color de coche 3 es: "+ coche_tres.getColor());
 
+console.log("Modelo del coche 1 es:", coche.getModelo());
 for(let i = 0; i<3; i++){
     coche.acelerar();
     console.log("Acelerando. La velocidad del coche es:", coche.getVelocidad());
 }
 
 coche.frenar();
-console.log("La velocidad del coche es:", coche.getVelocidad());
+console.log("Frenando. La velocidad del coche es:", coche.getVelocidad());
 
 console.log("Fin de viaje. Coche apagado. Velocidad: ", coche.apagar(0));
