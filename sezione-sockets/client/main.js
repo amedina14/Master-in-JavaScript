@@ -15,6 +15,9 @@ socket.on("messages", (data) => {
     render(data);
 });
 
+/**
+ * Visualizza i messaggi
+ */
 function render(data){
     let html = data.map((message, index) => {
         return (`
@@ -26,5 +29,23 @@ function render(data){
     }).join(' ');
 
     // Stampa il messaggio dentro il html
-    document.getElementById('messages').innerHTML = html;
+    const div_messages = document.getElementById('messages');
+    div_messages.innerHTML = html;
+    div_messages.scrollTop = div_messages.scrollHeight;
+}
+
+/**
+ * fx que envia msj de client a server
+ */
+function addMessage(e){
+    let message = {
+        nickName: document.getElementById('nickname').value,
+        text: document.getElementById('text').value
+    };
+
+    document.getElementById('nickname').style.display = 'none';
+    document.getElementById('text').value = '';
+    socket.emit("add-message",message);
+
+    return false;
 }
