@@ -13,8 +13,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Software = /** @class */ (function () {
     function Software() {
-        this.name = "";
-        this.version = 0;
+        this.name = "Software TypeScript";
+        this.version = "1.0.1";
     }
     Software.prototype.getName = function () {
         return this.name;
@@ -54,6 +54,57 @@ var VideoEditor = /** @class */ (function (_super) {
 }(Software));
 var editorVideo = new VideoEditor();
 editorVideo.setName("Camtasia Studio");
-editorVideo.setVersion(8);
+editorVideo.setVersion("8");
 editorVideo.setTimeline(4000);
 console.log(editorVideo.getAllData());
+/**
+ * Stampa sul Input HTML
+*/
+/**
+ * Logica del form: guardar programa
+ */
+var programas = [];
+function test() {
+    var software = new Software();
+    /*
+    let nameValue = (<HTMLInputElement>document.getElementById('name')).value;
+    let versionValue = (<HTMLInputElement>document.getElementById('version')).value;
+    nameValue = software.getName();
+    versionValue = software.getVersion();
+    */
+    /**
+     * Llena los inputs y los colora de rosado.
+     */
+    document.getElementById('name').value = software.getName();
+    document.getElementById('version').value = software.getVersion();
+    document.getElementById('name').style.background = 'rgb(255, 153, 239)';
+    document.getElementById('version').style.background = 'rgb(255, 153, 239)';
+}
+function guardar() {
+    document.getElementById('name').style.background = 'rgb(255, 255, 255)';
+    document.getElementById('version').style.background = 'rgb(255, 255, 255)';
+    var nameSoft = document.getElementById('name').value.toString();
+    var versionSoft = document.getElementById('version').value.toString();
+    var software = new Software();
+    software.setName(nameSoft);
+    software.setVersion(versionSoft);
+    programas.push(software);
+    /*
+    let list = "";
+    for(let i = 0; i < programas.length; i++){
+        list = list+"<p>"+programas[i].getName()+"</p>";
+    }
+    let listado = <HTMLElement>document.getElementById('list');
+    listado.innerHTML = list;
+   */
+    /*
+    */
+    var soft = "";
+    programas.forEach(function (element) {
+        soft = soft + ("\n       <div>\n       <li><b>Name:</b> " + element.getName() + "; <b>Version:</b> " + element.getVersion() + "</li>\n       </div>\n       ");
+    });
+    var listado = document.getElementById('lista');
+    listado.innerHTML = soft;
+    document.getElementById('name').value = "";
+    document.getElementById('version').value = "";
+}
