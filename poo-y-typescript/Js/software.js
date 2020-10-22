@@ -17,6 +17,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+/** Modules */
+var Tienda;
+(function (Tienda) {
+    var Ropa = /** @class */ (function () {
+        function Ropa(title) {
+            this.title = title;
+            alert(title);
+        }
+        return Ropa;
+    }());
+    Tienda.Ropa = Ropa;
+    var Informatica = /** @class */ (function () {
+        function Informatica(title) {
+            this.title = title;
+            alert(title);
+        }
+        return Informatica;
+    }());
+    Tienda.Informatica = Informatica;
+})(Tienda || (Tienda = {}));
+var Informatica = Tienda.Informatica;
+var tienda_informatica = new Informatica("Supertienda");
+/** Decorators
+ * Aggiunge nuove funzionalità alla classe.
+*/
 function launch(lanzar) {
     return function (target) {
         target.prototype.lanzamiento = new function () {
@@ -47,7 +72,8 @@ var Software = /** @class */ (function () {
     return Software;
 }());
 var software = new Software();
-software.lanzamiento("POO Typescript");
+//software.lanzamiento();
+/** Eredità */
 var VideoEditor = /** @class */ (function (_super) {
     __extends(VideoEditor, _super);
     function VideoEditor() {

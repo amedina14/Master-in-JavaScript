@@ -1,3 +1,24 @@
+/** Modules */
+module Tienda{
+    export class Ropa{
+        constructor(public title: string){
+            alert(title);
+        }
+    }
+    export class Informatica{
+        constructor(public title: string){
+            alert(title);
+        }
+    }
+}
+
+import Informatica = Tienda.Informatica;
+const tienda_informatica = new Informatica("Supertienda");
+
+
+/** Decorators 
+ * Aggiunge nuove funzionalità alla classe.
+*/
 function launch(lanzar: string){
     return function(target: Function){
         target.prototype.lanzamiento = new function(): void{
@@ -31,8 +52,9 @@ class Software{
 }
 
 const software = new Software();
-software.lanzamiento("POO Typescript");
+//software.lanzamiento();
 
+/** Eredità */
 class VideoEditor extends Software{
     public timeline: number;
     
