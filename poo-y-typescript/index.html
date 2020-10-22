@@ -12,15 +12,51 @@
     -->
     <script type="text/javascript" src="Js/software.js"></script>
 
+    <style>
+        p label{
+            display: inline-block;
+            width: 20%;
+            height: auto;
+        }
+        input[type="text"]{
+            width: 40%;
+        }
+
+    </style>
+
     <title>POO y TS</title>
 </head>
 
 <body>
-    <h1>POO Js y Ts</h1>
-    <p></p>
-    <footer>
+    <h1>POO Js & Ts</h1>
+    <p>Information of software</p>
+    
+    <form style="display:block; width: 40%; height: auto;">
+        <p>
+            <label id="lblName">Name:</label>
+            <input id="name" type="text" value="" placeholder="Name of your software..."/>
+        </p>
+        <p>
+            <label id="lblVersion">Version:</label>
+            <input id="version" type="text" value="" placeholder="mojito 1.0.1"/>
+        </p>
+        <p>
+            <!-- L'ID dev'essere diverso dalla funzione -->
+            <input id="save" type="button" value="Save" onclick="guardar()"/>
+            <input id="prova" type="button" value="Test" onclick="test()"/>
+        </p>
+    </form>
+
+    <div style="display: block; width: 40%; min-height: 100px; height: auto;">
+        <h4>List of software</h4>
+        <ul id="lista" class="list-soft">
+
+        </ul>
+    </div>
+
+    <footer style="margin: 30px 0px;">
         Master in Js - Adrian Medina &copy;
-        <a href="#" class="subir">Ir arriba</a>
+        <a href="#" class="subir">Go up</a>
     </footer>
 </body>
 
