@@ -1,3 +1,12 @@
+function launch(lanzar: string){
+    return function(target: Function){
+        target.prototype.lanzamiento = new function(): void{
+            alert(lanzar);
+        }
+    }
+}
+
+@launch("Decorator of Software Ts")
 class Software{
     public name: string;
     public version: string;
@@ -20,6 +29,9 @@ class Software{
         this.version = version;
     }
 }
+
+const software = new Software();
+software.lanzamiento("POO Typescript");
 
 class VideoEditor extends Software{
     public timeline: number;
